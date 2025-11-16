@@ -1,0 +1,29 @@
+[build]
+  command = "npm run build:client"
+  functions = "netlify/functions"
+  publish = "dist/spa"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NETLIFY = "true"
+
+[env]
+  [env.production]
+    NODE_ENV = "production"
+    NETLIFY = "true"
+
+[functions]
+  external_node_modules = ["express", "cors", "multer", "pdf-parse", "tesseract.js", "mammoth", "canvas", "docx", "dotenv"]
+  node_bundler = "esbuild"
+  included_files = ["server/**/*", "shared/**/*"]
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"
