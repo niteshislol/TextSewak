@@ -43,6 +43,7 @@ export function ImageCropModal({
 }: ImageCropModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [imageSrc, setImageSrc] = useState<string>("");
@@ -52,6 +53,7 @@ export function ImageCropModal({
   const [isDrawing, setIsDrawing] = useState(false);
   const [dragHandle, setDragHandle] = useState<DragHandle>(null);
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+  // cropArea is now normalized (0 to 1)
   const [cropArea, setCropArea] = useState({ x: 0, y: 0, width: 0, height: 0 });
 
   useEffect(() => {
@@ -62,37 +64,58 @@ export function ImageCropModal({
       setImageSrc(e.target?.result as string);
       setSelectedRatio(null);
       setImageLoaded(false);
-      setCropArea({ x: 0, y: 0, width: 0, height: 0 });
+      // Initialize to full image (0-1)
+      setCropArea({ x: 0, y: 0, width: 1, height: 1 });
     };
     reader.readAsDataURL(imageFile);
   }, [isOpen, imageFile]);
 
-  const handleImageLoad = () => {
-    if (!imageRef.current) return;
+  // Sync wrapper dimensions with image using deterministic calculation
+  useEffect(() => {
+    if (!imageRef.current || !wrapperRef.current || !containerRef.current || !imageLoaded) return;
 
     const img = imageRef.current;
+    const wrapper = wrapperRef.current;
+    const container = containerRef.current;
 
-    // Use a small delay to ensure layout is computed
-    const updateCropArea = () => {
-      const rect = img.getBoundingClientRect();
+    const updateDimensions = () => {
+      const containerRect = container.getBoundingClientRect();
+      const naturalWidth = img.naturalWidth;
+      const naturalHeight = img.naturalHeight;
 
-      // Ensure we have valid dimensions
-      if (rect.width > 0 && rect.height > 0) {
-        setCropArea({
-          x: 0,
-          y: 0,
-          width: Math.round(rect.width),
-          height: Math.round(rect.height),
-        });
-        setImageLoaded(true);
-      } else {
-        // Retry if dimensions not ready
-        requestAnimationFrame(updateCropArea);
+      if (containerRect.width > 0 && containerRect.height > 0 && naturalWidth > 0 && naturalHeight > 0) {
+        // Calculate scale to fit image within container while maintaining aspect ratio
+        const scale = Math.min(
+          containerRect.width / naturalWidth,
+          containerRect.height / naturalHeight
+        );
+
+        const finalWidth = naturalWidth * scale;
+        const finalHeight = naturalHeight * scale;
+
+        wrapper.style.width = `${finalWidth}px`;
+        wrapper.style.height = `${finalHeight}px`;
       }
     };
 
-    // Start checking dimensions
-    requestAnimationFrame(updateCropArea);
+    // Initial update
+    updateDimensions();
+
+    // Observe changes
+    const resizeObserver = new ResizeObserver(() => {
+      updateDimensions();
+    });
+
+    resizeObserver.observe(container);
+    resizeObserver.observe(img);
+
+    return () => resizeObserver.disconnect();
+  }, [imageLoaded, imageSrc]);
+
+  const handleImageLoad = () => {
+    if (!imageRef.current) return;
+    setImageLoaded(true);
+    // No need to set cropArea here as it's initialized to 0-1 in the file reader callback
   };
 
   const getImageDisplayDimensions = (): { width: number; height: number } => {
@@ -100,8 +123,8 @@ export function ImageCropModal({
 
     const rect = imageRef.current.getBoundingClientRect();
     return {
-      width: Math.round(rect.width),
-      height: Math.round(rect.height),
+      width: rect.width,
+      height: rect.height,
     };
   };
 
@@ -116,22 +139,18 @@ export function ImageCropModal({
     width: number;
     height: number;
   } => {
-    const { width: imgWidth, height: imgHeight } = getImageDisplayDimensions();
-
-    if (imgWidth === 0 || imgHeight === 0) return area;
-
     let { x, y, width, height } = area;
 
-    // Constrain to image bounds
-    x = Math.max(0, Math.min(x, imgWidth));
-    y = Math.max(0, Math.min(y, imgHeight));
-    width = Math.min(width, imgWidth - x);
-    height = Math.min(height, imgHeight - y);
+    // Constrain to 0-1 bounds
+    x = Math.max(0, Math.min(x, 1));
+    y = Math.max(0, Math.min(y, 1));
+    width = Math.min(width, 1 - x);
+    height = Math.min(height, 1 - y);
 
     return { x, y, width: Math.max(0, width), height: Math.max(0, height) };
   };
 
-  const getMousePos = (e: React.MouseEvent | React.TouchEvent) => {
+  const getMousePosNormalized = (e: React.MouseEvent | React.TouchEvent) => {
     if (!imageRef.current) return { x: 0, y: 0 };
 
     const img = imageRef.current;
@@ -151,9 +170,10 @@ export function ImageCropModal({
     const x = clientX - rect.left;
     const y = clientY - rect.top;
 
+    // Return normalized coordinates (0-1)
     return {
-      x: Math.max(0, Math.min(x, rect.width)),
-      y: Math.max(0, Math.min(y, rect.height)),
+      x: Math.max(0, Math.min(x / rect.width, 1)),
+      y: Math.max(0, Math.min(y / rect.height, 1)),
     };
   };
 
@@ -165,32 +185,37 @@ export function ImageCropModal({
       height: number;
     },
     ratio: number | null,
-    imgWidth: number,
-    imgHeight: number,
+    imgNaturalWidth: number,
+    imgNaturalHeight: number,
   ) => {
-    if (!ratio || ratio <= 0) {
+    if (!ratio || ratio <= 0 || imgNaturalWidth === 0 || imgNaturalHeight === 0) {
       return area;
     }
 
     let newWidth = area.width;
     let newHeight = area.height;
 
-    const targetHeight = newWidth / ratio;
+    // Calculate height based on width and aspect ratio
+    // ratio = (width * imgW) / (height * imgH)
+    // height = (width * imgW) / (ratio * imgH)
+    const targetHeight = (newWidth * imgNaturalWidth) / (ratio * imgNaturalHeight);
+
     if (targetHeight <= newHeight) {
       newHeight = targetHeight;
     } else {
-      newWidth = newHeight * ratio;
+      // width = (height * ratio * imgH) / imgW
+      newWidth = (newHeight * ratio * imgNaturalHeight) / imgNaturalWidth;
     }
 
-    // Constrain to image bounds
+    // Constrain to bounds
     let newX = area.x;
     let newY = area.y;
 
-    if (newX + newWidth > imgWidth) {
-      newX = Math.max(0, imgWidth - newWidth);
+    if (newX + newWidth > 1) {
+      newX = Math.max(0, 1 - newWidth);
     }
-    if (newY + newHeight > imgHeight) {
-      newY = Math.max(0, imgHeight - newHeight);
+    if (newY + newHeight > 1) {
+      newY = Math.max(0, 1 - newHeight);
     }
 
     return { x: newX, y: newY, width: newWidth, height: newHeight };
@@ -200,7 +225,7 @@ export function ImageCropModal({
     if (!imageLoaded) return;
 
     e.preventDefault();
-    const pos = getMousePos(e);
+    const pos = getMousePosNormalized(e);
     setIsDrawing(true);
     setDragHandle("move");
     setStartPos(pos);
@@ -209,8 +234,8 @@ export function ImageCropModal({
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDrawing || !imageRef.current) return;
 
-    const pos = getMousePos(e);
-    const { width: imgWidth, height: imgHeight } = getImageDisplayDimensions();
+    const pos = getMousePosNormalized(e);
+    const img = imageRef.current;
 
     let newCropArea = { ...cropArea };
 
@@ -234,8 +259,8 @@ export function ImageCropModal({
       newCropArea = applyAspectRatio(
         newCropArea,
         selectedRatio,
-        imgWidth,
-        imgHeight,
+        img.naturalWidth,
+        img.naturalHeight,
       );
     } else if (dragHandle) {
       // Handle corner/edge dragging
@@ -249,25 +274,25 @@ export function ImageCropModal({
 
       if (dragHandle.includes("w")) {
         newX = Math.max(0, cropArea.x + dx);
-        newWidth = Math.max(20, cropArea.width - dx);
+        newWidth = Math.max(0.01, cropArea.width - dx); // Min width 1%
       }
       if (dragHandle.includes("e")) {
-        newWidth = Math.max(20, cropArea.width + dx);
+        newWidth = Math.max(0.01, cropArea.width + dx);
       }
       if (dragHandle.includes("n")) {
         newY = Math.max(0, cropArea.y + dy);
-        newHeight = Math.max(20, cropArea.height - dy);
+        newHeight = Math.max(0.01, cropArea.height - dy); // Min height 1%
       }
       if (dragHandle.includes("s")) {
-        newHeight = Math.max(20, cropArea.height + dy);
+        newHeight = Math.max(0.01, cropArea.height + dy);
       }
 
       newCropArea = { x: newX, y: newY, width: newWidth, height: newHeight };
       newCropArea = applyAspectRatio(
         newCropArea,
         selectedRatio,
-        imgWidth,
-        imgHeight,
+        img.naturalWidth,
+        img.naturalHeight,
       );
 
       setStartPos(pos);
@@ -289,7 +314,7 @@ export function ImageCropModal({
       e.stopPropagation();
       setIsDrawing(true);
       setDragHandle(handle);
-      setStartPos(getMousePos(e));
+      setStartPos(getMousePosNormalized(e));
     };
 
   const drawCanvas = () => {
@@ -307,15 +332,12 @@ export function ImageCropModal({
     if (!ctx) return;
 
     const img = imageRef.current;
-    const displayRect = img.getBoundingClientRect();
 
-    const scaleX = img.naturalWidth / displayRect.width;
-    const scaleY = img.naturalHeight / displayRect.height;
-
-    const actualCropX = cropArea.x * scaleX;
-    const actualCropY = cropArea.y * scaleY;
-    const actualCropWidth = cropArea.width * scaleX;
-    const actualCropHeight = cropArea.height * scaleY;
+    // Use natural dimensions for drawing
+    const actualCropX = cropArea.x * img.naturalWidth;
+    const actualCropY = cropArea.y * img.naturalHeight;
+    const actualCropWidth = cropArea.width * img.naturalWidth;
+    const actualCropHeight = cropArea.height * img.naturalHeight;
 
     canvas.width = Math.floor(actualCropWidth);
     canvas.height = Math.floor(actualCropHeight);
@@ -355,14 +377,13 @@ export function ImageCropModal({
 
     // Only apply ratio if one is selected
     if (selectedRatio !== null) {
-      const { width: imgWidth, height: imgHeight } =
-        getImageDisplayDimensions();
+      const img = imageRef.current;
 
       let newCropArea = applyAspectRatio(
         cropArea,
         selectedRatio,
-        imgWidth,
-        imgHeight,
+        img.naturalWidth,
+        img.naturalHeight,
       );
 
       // Ensure it's within bounds
@@ -437,15 +458,13 @@ export function ImageCropModal({
 
       if (foundContent && maxX > minX && maxY > minY) {
         const padding = Math.min(20, Math.floor(maxX - minX) * 0.05);
-        const displayRect = img.getBoundingClientRect();
-        const scaleX = img.naturalWidth / displayRect.width;
-        const scaleY = img.naturalHeight / displayRect.height;
 
+        // Convert detected pixels to normalized coordinates
         setCropArea({
-          x: (minX - padding) / scaleX,
-          y: (minY - padding) / scaleY,
-          width: (maxX - minX + padding * 2) / scaleX,
-          height: (maxY - minY + padding * 2) / scaleY,
+          x: Math.max(0, (minX - padding) / img.naturalWidth),
+          y: Math.max(0, (minY - padding) / img.naturalHeight),
+          width: Math.min(1, (maxX - minX + padding * 2) / img.naturalWidth),
+          height: Math.min(1, (maxY - minY + padding * 2) / img.naturalHeight),
         });
       }
     } catch (error) {
@@ -477,7 +496,7 @@ export function ImageCropModal({
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-4 flex-1 overflow-hidden flex flex-col">
+        <div className="p-6 space-y-4 flex-1 overflow-hidden flex flex-col min-h-0">
           {/* Instructions */}
           <p className="text-sm text-muted-foreground">
             Drag on the image to create a crop area. Use the corners to resize,
@@ -490,13 +509,14 @@ export function ImageCropModal({
           {/* Image Container */}
           <div
             ref={containerRef}
-            className="bg-muted rounded-lg overflow-hidden border-2 border-border flex items-center justify-center flex-1"
+            className="bg-muted rounded-lg overflow-hidden border-2 border-border flex items-center justify-center flex-1 min-h-0"
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
           >
             {imageSrc && (
               <div
+                ref={wrapperRef}
                 className="relative"
                 style={{ maxHeight: "100%", maxWidth: "100%" }}
               >
@@ -509,9 +529,9 @@ export function ImageCropModal({
                     {
                       userSelect: "none",
                       WebkitUserDrag: "none",
-                      maxHeight: "100%",
-                      maxWidth: "100%",
-                      objectFit: "contain",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain"
                     } as React.CSSProperties
                   }
                   onLoad={handleImageLoad}
@@ -528,34 +548,34 @@ export function ImageCropModal({
                         top: 0,
                         left: 0,
                         width: "100%",
-                        height: cropArea.y,
+                        height: `${cropArea.y * 100}%`,
                       }}
                     />
                     <div
                       className="absolute bg-black/40 pointer-events-none"
                       style={{
-                        top: cropArea.y + cropArea.height,
+                        top: `${(cropArea.y + cropArea.height) * 100}%`,
                         left: 0,
                         width: "100%",
-                        height: `calc(100% - ${cropArea.y + cropArea.height}px)`,
+                        height: `${(1 - (cropArea.y + cropArea.height)) * 100}%`,
                       }}
                     />
                     <div
                       className="absolute bg-black/40 pointer-events-none"
                       style={{
-                        top: cropArea.y,
+                        top: `${cropArea.y * 100}%`,
                         left: 0,
-                        width: cropArea.x,
-                        height: cropArea.height,
+                        width: `${cropArea.x * 100}%`,
+                        height: `${cropArea.height * 100}%`,
                       }}
                     />
                     <div
                       className="absolute bg-black/40 pointer-events-none"
                       style={{
-                        top: cropArea.y,
-                        left: cropArea.x + cropArea.width,
-                        width: `calc(100% - ${cropArea.x + cropArea.width}px)`,
-                        height: cropArea.height,
+                        top: `${cropArea.y * 100}%`,
+                        left: `${(cropArea.x + cropArea.width) * 100}%`,
+                        width: `${(1 - (cropArea.x + cropArea.width)) * 100}%`,
+                        height: `${cropArea.height * 100}%`,
                       }}
                     />
 
@@ -563,10 +583,10 @@ export function ImageCropModal({
                     <div
                       className="absolute border-2 border-primary pointer-events-none"
                       style={{
-                        top: cropArea.y,
-                        left: cropArea.x,
-                        width: cropArea.width,
-                        height: cropArea.height,
+                        top: `${cropArea.y * 100}%`,
+                        left: `${cropArea.x * 100}%`,
+                        width: `${cropArea.width * 100}%`,
+                        height: `${cropArea.height * 100}%`,
                       }}
                     />
 
@@ -574,8 +594,8 @@ export function ImageCropModal({
                     <div
                       className="absolute w-5 h-5 bg-primary rounded-full cursor-nwse-resize hover:scale-125 transition-transform"
                       style={{
-                        top: cropArea.y - 2,
-                        left: cropArea.x - 2,
+                        top: `calc(${cropArea.y * 100}% - 2px)`,
+                        left: `calc(${cropArea.x * 100}% - 2px)`,
                         zIndex: 10,
                       }}
                       onMouseDown={handleCornerMouseDown("nw")}
@@ -583,8 +603,8 @@ export function ImageCropModal({
                     <div
                       className="absolute w-5 h-5 bg-primary rounded-full cursor-nesw-resize hover:scale-125 transition-transform"
                       style={{
-                        top: cropArea.y - 2,
-                        right: `calc(100% - ${cropArea.x + cropArea.width + 2}px)`,
+                        top: `calc(${cropArea.y * 100}% - 2px)`,
+                        right: `calc(${(1 - (cropArea.x + cropArea.width)) * 100}% - 2px)`,
                         zIndex: 10,
                       }}
                       onMouseDown={handleCornerMouseDown("ne")}
@@ -592,8 +612,8 @@ export function ImageCropModal({
                     <div
                       className="absolute w-5 h-5 bg-primary rounded-full cursor-nesw-resize hover:scale-125 transition-transform"
                       style={{
-                        bottom: `calc(100% - ${cropArea.y + cropArea.height + 2}px)`,
-                        left: cropArea.x - 2,
+                        bottom: `calc(${(1 - (cropArea.y + cropArea.height)) * 100}% - 2px)`,
+                        left: `calc(${cropArea.x * 100}% - 2px)`,
                         zIndex: 10,
                       }}
                       onMouseDown={handleCornerMouseDown("sw")}
@@ -601,8 +621,8 @@ export function ImageCropModal({
                     <div
                       className="absolute w-5 h-5 bg-primary rounded-full cursor-nwse-resize hover:scale-125 transition-transform"
                       style={{
-                        bottom: `calc(100% - ${cropArea.y + cropArea.height + 2}px)`,
-                        right: `calc(100% - ${cropArea.x + cropArea.width + 2}px)`,
+                        bottom: `calc(${(1 - (cropArea.y + cropArea.height)) * 100}% - 2px)`,
+                        right: `calc(${(1 - (cropArea.x + cropArea.width)) * 100}% - 2px)`,
                         zIndex: 10,
                       }}
                       onMouseDown={handleCornerMouseDown("se")}
@@ -612,8 +632,8 @@ export function ImageCropModal({
                     <div
                       className="absolute w-6 h-1 bg-primary/60 cursor-ns-resize hover:bg-primary transition-colors"
                       style={{
-                        top: cropArea.y,
-                        left: `calc(${cropArea.x + cropArea.width / 2}px - 12px)`,
+                        top: `${cropArea.y * 100}%`,
+                        left: `calc(${(cropArea.x + cropArea.width / 2) * 100}% - 12px)`,
                         width: "24px",
                         zIndex: 10,
                       }}
@@ -622,8 +642,8 @@ export function ImageCropModal({
                     <div
                       className="absolute w-6 h-1 bg-primary/60 cursor-ns-resize hover:bg-primary transition-colors"
                       style={{
-                        bottom: `calc(100% - ${cropArea.y + cropArea.height}px)`,
-                        left: `calc(${cropArea.x + cropArea.width / 2}px - 12px)`,
+                        bottom: `${(1 - (cropArea.y + cropArea.height)) * 100}%`,
+                        left: `calc(${(cropArea.x + cropArea.width / 2) * 100}% - 12px)`,
                         width: "24px",
                         zIndex: 10,
                       }}
@@ -632,8 +652,8 @@ export function ImageCropModal({
                     <div
                       className="absolute w-1 h-6 bg-primary/60 cursor-ew-resize hover:bg-primary transition-colors"
                       style={{
-                        left: cropArea.x,
-                        top: `calc(${cropArea.y + cropArea.height / 2}px - 12px)`,
+                        left: `${cropArea.x * 100}%`,
+                        top: `calc(${(cropArea.y + cropArea.height / 2) * 100}% - 12px)`,
                         height: "24px",
                         zIndex: 10,
                       }}
@@ -642,8 +662,8 @@ export function ImageCropModal({
                     <div
                       className="absolute w-1 h-6 bg-primary/60 cursor-ew-resize hover:bg-primary transition-colors"
                       style={{
-                        right: `calc(100% - ${cropArea.x + cropArea.width}px)`,
-                        top: `calc(${cropArea.y + cropArea.height / 2}px - 12px)`,
+                        right: `${(1 - (cropArea.x + cropArea.width)) * 100}%`,
+                        top: `calc(${(cropArea.y + cropArea.height / 2) * 100}% - 12px)`,
                         height: "24px",
                         zIndex: 10,
                       }}

@@ -27,7 +27,7 @@ export interface DocumentHistoryItem {
   fileType: string;
 }
 
-const MAX_HISTORY_ITEMS = 50;
+const MAX_HISTORY_ITEMS = 1000;
 const COLLECTION_NAME = "document_history";
 
 export function useDocumentHistory() {
