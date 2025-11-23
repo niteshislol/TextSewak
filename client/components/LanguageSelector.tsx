@@ -14,6 +14,7 @@ const LANGUAGES = [
   { code: "ben", label: "Bengali (বাংলা)" },
   { code: "tam", label: "Tamil (தமிழ்)" },
   { code: "tel", label: "Telugu (తెలుగు)" },
+  { code: "hindi-original", label: "Hindi (Original)" },
 ];
 
 export function LanguageSelector({

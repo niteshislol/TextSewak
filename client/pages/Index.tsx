@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { createWorker, Worker } from "tesseract.js";
+import { createWorker, Worker, PSM } from "tesseract.js";
 import { toast } from "sonner";
 import { Loader2, Zap, X, Trash2 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -55,6 +55,7 @@ export default function Index() {
   const [shouldAutoExtract, setShouldAutoExtract] = useState(false);
   const [uploadType, setUploadType] = useState<"image" | "document" | null>(null);
   const [preprocessImageEnabled, setPreprocessImageEnabled] = useState(false);
+  const [strictMode, setStrictMode] = useState(true);
   const [worker, setWorker] = useState<Worker | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const workerRef = useRef<Worker | null>(null);
@@ -75,7 +76,13 @@ export default function Index() {
       }
 
       try {
-        const ocrLangCode = language === "eng" ? "eng" : `eng+${language}`;
+        let ocrLangCode;
+        if (language === "hindi-original") {
+          ocrLangCode = "hin";
+        } else {
+          ocrLangCode = language === "eng" ? "eng" : `eng+${language}`;
+        }
+
         const newWorker = await createWorker(ocrLangCode, 1, {
           logger: (m) => {
             if (m.status === "recognizing text") {
@@ -155,7 +162,7 @@ export default function Index() {
       setDocumentFileName(newFile.name);
       if (newFile.type === "application/pdf") {
         setShowPdfPreview(true);
-        setPdfPageRange({ start: 1, end: 1 });
+        setPdfPageRange(null);
       }
     } else {
       setDocumentFileName(null);
@@ -230,16 +237,40 @@ export default function Index() {
       // Handle image OCR (from file or URL)
       if (uploadType === "image" && (currentFile?.type.startsWith("image/") || currentImageUrl)) {
         if (!workerRef.current) {
-          const ocrLangCode = language === "eng" ? "eng" : `eng+${language}`;
+          let ocrLangCode;
+          if (language === "hindi-original") {
+            ocrLangCode = "hin";
+          } else {
+            ocrLangCode = language === "eng" ? "eng" : `eng+${language}`;
+          }
+
           workerRef.current = await createWorker(ocrLangCode, 1, {
-          logger: (m) => {
+            logger: (m) => {
               setProgress({
                 status: m.status,
                 progress: m.progress || 0,
               });
-          },
-        });
+            },
+          });
           setWorker(workerRef.current);
+        }
+
+        // --- SPECIFIC LOGIC FOR HINDI ORIGINAL ---
+        if (language === "hindi-original") {
+          // 1. PSM 6: Assume a single uniform block of text (Good for pages)
+          await workerRef.current.setParameters({
+            tessedit_pageseg_mode: PSM.SINGLE_BLOCK,
+          });
+
+          // 2. White-listing: Banning English characters if strict mode is on
+          if (strictMode) {
+            // Allow only Devanagari Unicode range + basic punctuation + numbers
+            const hindiWhitelist =
+              " \u0900\u0901\u0902\u0903\u0904\u0905\u0906\u0907\u0908\u0909\u090a\u090b\u090c\u090d\u090e\u090f\u0910\u0911\u0912\u0913\u0914\u0915\u0916\u0917\u0918\u0919\u091a\u091b\u091c\u091d\u091e\u091f\u0920\u0921\u0922\u0923\u0924\u0925\u0926\u0927\u0928\u0929\u092a\u092b\u092c\u092d\u092e\u092f\u0930\u0931\u0932\u0933\u0934\u0935\u0936\u0937\u0938\u0939\u093a\u093b\u093c\u093d\u093e\u093f\u0940\u0941\u0942\u0943\u0944\u0945\u0946\u0947\u0948\u0949\u094a\u094b\u094c\u094d\u094e\u094f\u0950\u0951\u0952\u0953\u0954\u0955\u0956\u0957\u0958\u0959\u095a\u095b\u095c\u095d\u095e\u095f\u0960\u0961\u0962\u0963\u0964\u0965\u0966\u0967\u0968\u0969\u096a\u096b\u096c\u096d\u096e\u096f\u0970\u0971\u0972\u0973\u0974\u0975\u0976\u0977\u0978\u0979\u097a\u097b\u097c\u097d\u097e\u097f.,-!?\"'";
+            await workerRef.current.setParameters({
+              tessedit_char_whitelist: hindiWhitelist,
+            });
+          }
         }
 
         let imageToProcess: File | HTMLImageElement | HTMLCanvasElement;
@@ -399,9 +430,9 @@ export default function Index() {
       if (error instanceof Error && error.message === "Processing cancelled") {
         toast.info("Processing cancelled by user");
       } else {
-      toast.error(
-        error instanceof Error ? error.message : "An unknown error occurred.",
-      );
+        toast.error(
+          error instanceof Error ? error.message : "An unknown error occurred.",
+        );
       }
     } finally {
       setIsLoading(false);
@@ -498,6 +529,24 @@ export default function Index() {
               setLanguage={setLanguage}
               disabled={isLoading}
             />
+            {language === "hindi-original" && (
+              <div className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  id="strict-mode"
+                  checked={strictMode}
+                  onChange={(e) => setStrictMode(e.target.checked)}
+                  disabled={isLoading}
+                  className="h-4 w-4 text-primary border-border rounded focus:ring-primary"
+                />
+                <label
+                  htmlFor="strict-mode"
+                  className="text-sm font-medium text-foreground cursor-pointer"
+                >
+                  Strict Hindi (No English)
+                </label>
+              </div>
+            )}
             <div className="flex gap-2">
               {isLoading && isProcessing && (
                 <button
@@ -508,19 +557,19 @@ export default function Index() {
                   Cancel
                 </button>
               )}
-            <button
-              onClick={handleExtract}
+              <button
+                onClick={handleExtract}
                 disabled={isLoading || (!imageFile && !documentFile && !imageUrl)}
                 className="px-6 py-3 bg-primary text-white font-bold rounded-lg shadow-md hover:bg-primary/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            >
-              {isLoading ? (
-                <Loader2 size={20} className="animate-spin" />
-              ) : (
-                <Zap size={20} />
-              )}
-              {isLoading ? "Extracting..." : "Extract Text"}
-            </button>
-          </div>
+              >
+                {isLoading ? (
+                  <Loader2 size={20} className="animate-spin" />
+                ) : (
+                  <Zap size={20} />
+                )}
+                {isLoading ? "Extracting..." : "Extract Text"}
+              </button>
+            </div>
           </div>
 
           {/* Clear All Button */}
