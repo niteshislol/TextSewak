@@ -95,11 +95,10 @@ export function UploadDropzone({
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
-          className={`w-full border-2 border-dashed rounded-lg p-8 text-center transition-all cursor-pointer ${
-            isDragging
+          className={`w-full border-2 border-dashed rounded-lg p-8 text-center transition-all cursor-pointer ${isDragging
               ? "border-primary bg-primary/10"
               : "border-border hover:border-primary"
-          } ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
+            } ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
         >
           <Upload size={32} className="mx-auto mb-3 text-primary" />
           <p className="text-sm font-semibold text-foreground mb-2">

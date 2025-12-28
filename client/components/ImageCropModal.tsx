@@ -45,6 +45,7 @@ export function ImageCropModal({
   const imageRef = useRef<HTMLImageElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const previewCanvasRef = useRef<HTMLCanvasElement>(null);
 
   const [imageSrc, setImageSrc] = useState<string>("");
   const [selectedRatio, setSelectedRatio] = useState<number | null>(null);
@@ -55,6 +56,11 @@ export function ImageCropModal({
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
   // cropArea is now normalized (0 to 1)
   const [cropArea, setCropArea] = useState({ x: 0, y: 0, width: 0, height: 0 });
+
+  // Threshold state
+  const [thresholdEnabled, setThresholdEnabled] = useState(false);
+  const [thresholdValue, setThresholdValue] = useState(130);
+  const [processedImageSrc, setProcessedImageSrc] = useState<string>("");
 
   useEffect(() => {
     if (!isOpen) return;
@@ -117,6 +123,54 @@ export function ImageCropModal({
     setImageLoaded(true);
     // No need to set cropArea here as it's initialized to 0-1 in the file reader callback
   };
+
+  // Apply threshold to preview canvas
+  const applyThresholdPreview = () => {
+    if (!imageRef.current || !previewCanvasRef.current || !thresholdEnabled) {
+      setProcessedImageSrc("");
+      return;
+    }
+
+    const img = imageRef.current;
+    const canvas = previewCanvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // Set canvas size to match image natural dimensions
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+
+    // Draw the original image
+    ctx.drawImage(img, 0, 0);
+
+    // Apply threshold
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+
+    for (let i = 0; i < data.length; i += 4) {
+      // Convert to grayscale
+      const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+
+      // Apply binary threshold
+      const value = gray > thresholdValue ? 255 : 0;
+
+      data[i] = value;     // R
+      data[i + 1] = value; // G
+      data[i + 2] = value; // B
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+
+    // Convert canvas to data URL for display
+    setProcessedImageSrc(canvas.toDataURL());
+  };
+
+  // Update preview when threshold changes
+  useEffect(() => {
+    if (imageLoaded) {
+      applyThresholdPreview();
+    }
+  }, [thresholdEnabled, thresholdValue, imageLoaded]);
 
   const getImageDisplayDimensions = (): { width: number; height: number } => {
     if (!imageRef.current) return { width: 0, height: 0 };
@@ -353,11 +407,32 @@ export function ImageCropModal({
       Math.floor(actualCropWidth),
       Math.floor(actualCropHeight),
     );
+
+    // Apply threshold if enabled
+    if (thresholdEnabled) {
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      for (let i = 0; i < data.length; i += 4) {
+        // Convert to grayscale
+        const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+
+        // Apply binary threshold
+        const value = gray > thresholdValue ? 255 : 0;
+
+        data[i] = value;     // R
+        data[i + 1] = value; // G
+        data[i + 2] = value; // B
+        // Alpha channel (i + 3) remains unchanged
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+    }
   };
 
   useEffect(() => {
     drawCanvas();
-  }, [cropArea, imageLoaded]);
+  }, [cropArea, imageLoaded, thresholdEnabled, thresholdValue]);
 
   useEffect(() => {
     if (!isDrawing) return;
@@ -503,7 +578,8 @@ export function ImageCropModal({
             or adjust aspect ratio below.
           </p>
 
-          {/* Canvas for preview */}
+          {/* Canvas for final crop output */}
+          <canvas ref={previewCanvasRef} className="hidden" />
           <canvas ref={canvasRef} className="hidden" />
 
           {/* Image Container */}
@@ -522,7 +598,7 @@ export function ImageCropModal({
               >
                 <img
                   ref={imageRef}
-                  src={imageSrc}
+                  src={thresholdEnabled && processedImageSrc ? processedImageSrc : imageSrc}
                   alt="Crop preview"
                   className="block select-none"
                   style={
@@ -678,6 +754,45 @@ export function ImageCropModal({
           {/* Controls */}
           {imageLoaded && (
             <div className="space-y-3 mt-4">
+              {/* Threshold Controls */}
+              <div className="space-y-2 p-3 bg-muted/50 rounded-lg border border-border">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="threshold-toggle"
+                    checked={thresholdEnabled}
+                    onChange={(e) => setThresholdEnabled(e.target.checked)}
+                    className="h-4 w-4 text-primary border-border rounded focus:ring-primary"
+                  />
+                  <label
+                    htmlFor="threshold-toggle"
+                    className="text-sm font-medium cursor-pointer"
+                  >
+                    Apply Threshold (Remove Lines)
+                  </label>
+                </div>
+
+                {thresholdEnabled && (
+                  <div className="space-y-1">
+                    <div className="flex justify-between items-center">
+                      <label className="text-xs text-muted-foreground">Threshold Value</label>
+                      <span className="text-xs font-bold text-primary">{thresholdValue}</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0"
+                      max="255"
+                      value={thresholdValue}
+                      onChange={(e) => setThresholdValue(parseInt(e.target.value))}
+                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Adjust until notebook lines disappear but text remains visible.
+                    </p>
+                  </div>
+                )}
+              </div>
+
               <div className="flex items-center justify-between">
                 <label className="text-sm font-medium">Aspect Ratio</label>
                 <button
