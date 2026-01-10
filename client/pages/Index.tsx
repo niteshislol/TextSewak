@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { createWorker, Worker, PSM } from "tesseract.js";
 import { toast } from "sonner";
-import { Loader2, Zap, X, Trash2 } from "lucide-react";
+import { Loader2, Zap, X, Trash2, Gavel } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Header } from "@/components/Header";
@@ -13,8 +14,9 @@ import { ImageUrlInput } from "@/components/ImageUrlInput";
 import { PdfPreview } from "@/components/PdfPreview";
 import { OcrResult } from "@/components/OcrResult";
 import { DocumentHistory } from "@/components/DocumentHistory";
-import { useDocumentHistory } from "@/hooks/use-document-history";
+import { useDocumentHistory, type DocumentHistoryItem } from "@/hooks/use-document-history";
 import { preprocessImage } from "@/utils/imagePreprocessing";
+import { HowToUse } from "@/components/HowToUse";
 
 // Dynamically import pdfjs-dist
 let pdfjsLib: any = null;
@@ -36,6 +38,7 @@ type OcrProgress = {
 };
 
 export default function Index() {
+  const navigate = useNavigate();
   // Image upload state
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [filePreview, setFilePreview] = useState<string | null>(null);
@@ -48,7 +51,7 @@ export default function Index() {
   const [pdfPageRange, setPdfPageRange] = useState<{ start: number; end: number } | null>(null);
   const [showPdfPreview, setShowPdfPreview] = useState(false);
 
-  const [language, setLanguage] = useState("hin");
+  const [language, setLanguage] = useState("hindi-original");
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState<OcrProgress | null>(null);
   const [result, setResult] = useState("");
@@ -453,7 +456,7 @@ export default function Index() {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
 
-      <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -608,14 +611,24 @@ export default function Index() {
             onTextChange={(newText) => setResult(newText)}
           />
 
-          {/* Document History Section */}
-          <DocumentHistory
-            history={history}
-            onDelete={deleteFromHistory}
-            onClearAll={clearHistory}
-          />
+          {result && (
+            <div className="w-full flex justify-end mt-4">
+              <button
+                onClick={() => navigate("/legalanalysis", { state: { text: result } })}
+                className="px-6 py-2 bg-indigo-600 text-white font-bold rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300 flex items-center gap-2"
+              >
+                <Gavel size={20} />
+                Do Legal Analysis
+              </button>
+            </div>
+          )}
         </motion.div>
       </main>
+
+      {/* Fixed Help Button - Bottom Right */}
+      <div className="fixed bottom-6 right-6 z-40 mb-16 md:mb-0">
+        <HowToUse />
+      </div>
 
       <Footer />
     </div>

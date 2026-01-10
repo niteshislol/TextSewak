@@ -5,19 +5,20 @@ import multer from "multer";
 import { handleDemo } from "./routes/demo";
 import { handleOCRHealth, handleOCRExtract } from "./routes/ocr";
 import { handleProcessDoc } from "./routes/process-doc";
+import { handleLegalAnalyze } from "./routes/legal";
 
 // Configure multer for file uploads
 // Use memory storage for serverless (Netlify Functions) or disk storage for local dev
 const isServerless = process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME;
-const storage = isServerless 
-  ? multer.memoryStorage() 
+const storage = isServerless
+  ? multer.memoryStorage()
   : multer.diskStorage({
-      destination: (req, file, cb) => {
-        // Use /tmp for Netlify Functions, uploads/ for local
-        const dest = process.env.NETLIFY ? "/tmp" : "uploads/";
-        cb(null, dest);
-      },
-    });
+    destination: (req, file, cb) => {
+      // Use /tmp for Netlify Functions, uploads/ for local
+      const dest = process.env.NETLIFY ? "/tmp" : "uploads/";
+      cb(null, dest);
+    },
+  });
 
 const upload = multer({
   storage,
@@ -58,6 +59,9 @@ export function createServer() {
   // OCR API routes
   app.get("/api/ocr/health", handleOCRHealth);
   app.post("/api/ocr/extract", handleOCRExtract);
+
+  // Legal Engine API route
+  app.post("/api/legal/analyze", handleLegalAnalyze);
 
   // Document processing route
   app.post("/api/process-doc", upload.single("file"), handleProcessDoc);

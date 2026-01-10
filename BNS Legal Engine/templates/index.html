@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhartiya Nyaya Sanhita (BNS) Legal Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>⚖️ BNS Legal Engine</h1>
+                <span class="badge">AI Powered</span>
+            </div>
+            <div class="header-controls">
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="hi">Hindi</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            <p>Advanced FIR Analysis & Section Recommendation System</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>FIR Input</h2>
+                <div class="textarea-wrapper">
+                    <textarea id="firInput" placeholder="Paste your FIR or legal complaint here (Hindi/English)..."></textarea>
+                    <div class="actions">
+                        <button id="clearBtn" class="btn secondary">Clear</button>
+                        <button id="analyzeBtn" class="btn primary">Analyze Case ➔</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <div class="status-bar">
+                    <div class="status-item">
+                        <span class="label">Matched Template:</span>
+                        <span id="templateName" class="value">--</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Analysis Mode:</span>
+                        <span id="analysisMode" class="value">--</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Confidence:</span>
+                        <span id="confidenceScore" class="value">--</span>
+                    </div>
+                </div>
+
+                <div id="customMessage" class="alert hidden"></div>
+
+                <div class="sections-list">
+                    <h3>Relevant BNS Sections</h3>
+                    <div id="sectionsContainer" class="cards-grid">
+                        <!-- Cards will be injected here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="loader" class="loader hidden">
+                <div class="spinner"></div>
+                <p>Analyzing text and searching legal database...</p>
+            </div>
+
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 BNS Legal Engine. Private & Confidential.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

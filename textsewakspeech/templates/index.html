@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNS Intelligence Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo-area">
+                <span class="logo-icon">⚖️</span>
+                <h1>BNS Intelligence</h1>
+            </div>
+            <p class="subtitle">AI-Powered FIR Analysis & Section Matching</p>
+        </header>
+
+        <main class="content-area">
+            <section class="input-section card">
+                <div class="card-header">
+                    <h2>FIR Analysis</h2>
+                    <span class="badge">Hindi/English Supported</span>
+                </div>
+                <div class="card-body">
+                    <label for="fir-text" class="input-label">Enter FIR Description or Incident Details</label>
+                    <textarea id="fir-text" placeholder="Example: कल रात मेरे घर में चोरी हुई... or Someone snatched my chain..." spellcheck="false"></textarea>
+                    
+                    <div class="action-bar">
+                        <button id="clear-btn" class="btn btn-secondary">Clear</button>
+                        <button id="analyze-btn" class="btn btn-primary">
+                            <span class="btn-text">Analyze FIR</span>
+                            <span class="loader hidden"></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="results-section" class="results-section hidden">
+                <h3 class="results-title">Analysis Results</h3>
+                <div id="results-container">
+                    <!-- Results will be injected here via JS -->
+                </div>
+            </section>
+        </main>
+        
+        <footer class="main-footer">
+            <p>Powered by IndicBERT-v3 & Bharatiya Nyaya Sanhita 2023</p>
+        </footer>
+    </div>
+
+    <!-- Template for a single Match Result item (Hidden) -->
+    <template id="match-card-template">
+        <div class="match-group">
+            <div class="sentence-box">
+                <span class="label">Identified Incident:</span>
+                <p class="sentence-text"></p>
+            </div>
+            <div class="sections-list">
+                <!-- Section items go here -->
+            </div>
+        </div>
+    </template>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

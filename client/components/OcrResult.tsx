@@ -1,4 +1,4 @@
-import { Copy, Download, RefreshCw, Volume2, StopCircle, Check, FileText, Image as ImageIcon, FileType } from "lucide-react";
+import { Copy, Download, RefreshCw, Volume2, StopCircle, Check, FileText, Image as ImageIcon, FileType, Mic } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import html2canvas from "html2canvas";
@@ -22,6 +22,7 @@ interface OcrResultProps {
 
 export function OcrResult({ text, onClear, onTextChange }: OcrResultProps) {
     const [isSpeaking, setIsSpeaking] = useState(false);
+    const [isListening, setIsListening] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
     const [showPdfModal, setShowPdfModal] = useState(false);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -32,6 +33,7 @@ export function OcrResult({ text, onClear, onTextChange }: OcrResultProps) {
         window.speechSynthesis.addEventListener("cancel", handleSpeechEnd);
 
         return () => {
+            window.speechSynthesis.cancel();
             window.speechSynthesis.removeEventListener("end", handleSpeechEnd);
             window.speechSynthesis.removeEventListener("cancel", handleSpeechEnd);
         };
@@ -118,6 +120,56 @@ export function OcrResult({ text, onClear, onTextChange }: OcrResultProps) {
         } catch (error) {
             console.error("Image export error:", error);
             toast.error("Failed to export as image");
+        }
+    };
+
+    const handleDictation = async () => {
+        setIsListening(true);
+        try {
+            const response = await fetch("http://localhost:5056/listen");
+            const data = await response.json();
+            if (data.error) {
+                toast.error("Error: " + data.error);
+            } else if (data.text) {
+                const currentText = text;
+                const textarea = textareaRef.current;
+
+                if (textarea) {
+                    const startPos = textarea.selectionStart;
+                    const endPos = textarea.selectionEnd;
+
+                    const textBefore = currentText.substring(0, startPos);
+                    const textAfter = currentText.substring(endPos);
+
+                    // Add space if needed
+                    const spaceBefore = startPos > 0 && !currentText[startPos - 1].match(/\s/) ? " " : "";
+                    const spaceAfter = textAfter.length > 0 && !textAfter[0].match(/\s/) ? " " : "";
+
+                    const newText = textBefore + spaceBefore + data.text + spaceAfter + textAfter;
+
+                    onTextChange(newText);
+
+                    // Restore cursor position after the inserted text
+                    setTimeout(() => {
+                        textarea.focus();
+                        const newCursorPos = startPos + spaceBefore.length + data.text.length + spaceAfter.length;
+                        textarea.setSelectionRange(newCursorPos, newCursorPos);
+                    }, 0);
+                } else {
+                    // Fallback to appending if ref not available (shouldn't happen)
+                    const newText = text ? text + " " + data.text : data.text;
+                    onTextChange(newText);
+                }
+
+                toast.success("Text recognized!");
+            } else {
+                toast.info("No speech recognized.");
+            }
+        } catch (err) {
+            toast.error("Connection failed! Make sure offline_app.py is running on port 5056.");
+            console.error(err);
+        } finally {
+            setIsListening(false);
         }
     };
 
@@ -213,6 +265,26 @@ export function OcrResult({ text, onClear, onTextChange }: OcrResultProps) {
                                 </TooltipTrigger>
                                 <TooltipContent>
                                     <p>Download as Text</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </TooltipProvider>
+
+                        <TooltipProvider>
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        onMouseDown={(e) => e.preventDefault()}
+                                        onClick={handleDictation}
+                                        disabled={isListening}
+                                        className={isListening ? "!bg-[#FF0000] !text-white animate-pulse hover:!bg-[#FF0000]/90" : ""}
+                                    >
+                                        <Mic size={18} />
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                    <p>Dictate Text (Offline)</p>
                                 </TooltipContent>
                             </Tooltip>
                         </TooltipProvider>

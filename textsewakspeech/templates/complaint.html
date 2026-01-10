@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ FIR Complaint Generator ✨</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .form-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            padding-right: 2.5rem; /* Space for mic icon */
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .mic-btn {
+            position: absolute;
+            right: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #94a3b8;
+            padding: 4px;
+            border-radius: 50%;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mic-btn:hover {
+            color: var(--primary);
+            background-color: #e0e7ff;
+        }
+
+        .mic-btn.listening {
+            color: #ef4444;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        .preview-pane {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px dashed #94a3b8;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            max-height: 700px;
+            position: relative;
+        }
+
+        .preview-header {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-badge {
+            font-size: 0.7rem;
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 999px;
+            color: #64748b;
+        }
+
+        button {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.2s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚔 FIR Complaint Generator (Hindi)</h1>
+
+        <!-- Form Section -->
+        <div class="form-column">
+            
+            <div class="form-group">
+                <label>📍 थाना (Police Station)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="station" placeholder="Ex: नई दिल्ली थाना" oninput="updatePreview()">
+                    <button class="mic-btn" onclick="startListening('station')" title="Speak for this field">🎤</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>🏢 थाने का पता (Station Address)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="stationAddr" placeholder="Ex: कनॉट प्लेस, नई दिल्ली" oninput="updatePreview()">
+                    <button class="mic-btn" onclick="startListening('stationAddr')">🎤</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>👤 आपका नाम (Your Name)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="name" placeholder="Ex: रमेश कुमार" oninput="updatePreview()">
+                    <button class="mic-btn" onclick="startListening('name')">🎤</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>🏠 आपका पता (Your Address)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="address" placeholder="Ex: सेक्टर 12, नोएडा" oninput="updatePreview()">
+                    <button class="mic-btn" onclick="startListening('address')">🎤</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>📅 तारीख (Date of Incident)</label>
+                <div class="input-wrapper">
+                    <input type="date" id="date" oninput="updatePreview()">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>📍 स्थान (Place of Incident)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="place" placeholder="Ex: मेट्रो स्टेशन" oninput="updatePreview()">
+                    <button class="mic-btn" onclick="startListening('place')">🎤</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>🎒 खोई वस्तु (Lost Item)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="item" placeholder="Ex: काला लेदर बैग" oninput="updatePreview()">
+                    <button class="mic-btn" onclick="startListening('item')">🎤</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>📝 विवरण (Details)</label>
+                <div class="input-wrapper">
+                    <textarea id="details" rows="3" placeholder="Ex: जिसमें मेरा आधार कार्ड और 2000 रुपये थे..." oninput="updatePreview()"></textarea>
+                    <button class="mic-btn" onclick="startListening('details')" style="top: 8px;">🎤</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>📱 मोबाइल (Mobile)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="mobile" placeholder="Ex: 9876543210" oninput="updatePreview()">
+                    <button class="mic-btn" onclick="startListening('mobile')">🎤</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-pane" id="previewArea">
+            <div class="preview-header">
+                Live Preview
+                <span id="listening-status" class="status-badge" style="display:none;">Listening...</span>
+            </div>
+            <div id="letterContent">
+सेवा में,
+श्रीमान थाना प्रभारी महोदय,
+<span id="p_station">[थाने का नाम]</span>,
+<span id="p_stationAddr">[थाने का पता]</span>
+
+विषय: खोई हुई वस्तु (<span id="p_item_sub">...</span>) के संबंध में शिकायत पत्र।
+
+महोदय/महोदया,
+
+सविनय निवेदन है कि मैं <span id="p_name">[आपका नाम]</span>, निवासी <span id="p_address">[आपका पता]</span> हूँ। 
+दिनांक <span id="p_date">[तारीख]</span> को मैं <span id="p_place">[स्थान]</span> पर <span id="p_item">[वस्तु]</span> लेकर जा रहा था/रही थी, और रास्ते में वह सामान कहीं गिर गया या खो गया। 
+मैंने उसे ढूँढने की बहुत कोशिश की, लेकिन मुझे वह नहीं मिला।
+
+खोये हुए सामान का विवरण निम्नलिखित है:
+<span id="p_details">[विवरण]</span>
+
+अतः आपसे विनम्र निवेदन है कि कृपया मेरे खोए हुए सामान की खोजबीन करने में मेरी सहायता करें और मेरी शिकायत दर्ज करें।
+
+सधन्यवाद,
+
+<span id="p_name_sign">[आपका नाम]</span>
+मोबाइल: <span id="p_mobile">[मोबाइल]</span>
+दिनांक: <span id="p_today"></span>
+            </div>
+        </div>
+
+        <button onclick="copyText()">📋 Copy Complaint Text</button>
+    </div>
+
+    <script>
+        function updatePreview() {
+            document.getElementById('p_station').innerText = document.getElementById('station').value || "[थाने का नाम]";
+            document.getElementById('p_stationAddr').innerText = document.getElementById('stationAddr').value || "[थाने का पता]";
+            document.getElementById('p_item_sub').innerText = document.getElementById('item').value || "...";
+            const name = document.getElementById('name').value || "[आपका नाम]";
+            document.getElementById('p_name').innerText = name;
+            document.getElementById('p_name_sign').innerText = name;
+            document.getElementById('p_address').innerText = document.getElementById('address').value || "[आपका पता]";
+            document.getElementById('p_date').innerText = document.getElementById('date').value || "[तारीख]";
+            document.getElementById('p_place').innerText = document.getElementById('place').value || "[स्थान]";
+            document.getElementById('p_item').innerText = document.getElementById('item').value || "[वस्तु]";
+            document.getElementById('p_details').innerText = document.getElementById('details').value || "[विवरण]";
+            document.getElementById('p_mobile').innerText = document.getElementById('mobile').value || "[मोबाइल]";
+            
+            const today = new Date().toLocaleDateString('en-GB');
+            document.getElementById('p_today').innerText = today;
+        }
+
+        function copyText() {
+            const text = document.getElementById('letterContent').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Complaint text copied to clipboard! ✅");
+            });
+        }
+        
+        // Initialize date
+        document.getElementById('p_today').innerText = new Date().toLocaleDateString('en-GB');
+
+        // Speech Recognition Setup
+        let recognition;
+        
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'hi-IN'; // Set to Hindi
+        } else {
+            console.warn("Speech Recognition API not supported in this browser.");
+            alert("Your browser does not support speech recognition. Please use Chrome or Edge.");
+        }
+
+        function startListening(fieldId) {
+            if (!recognition) return;
+
+            const btn = document.querySelector(`button[onclick="startListening('${fieldId}')"]`);
+            const statusBadge = document.getElementById('listening-status');
+
+            recognition.start();
+            btn.classList.add('listening');
+            statusBadge.style.display = 'inline-block';
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                const inputField = document.getElementById(fieldId);
+                
+                // Append text if there's already content, otherwise replace
+                if (inputField.value) {
+                    inputField.value += " " + transcript;
+                } else {
+                    inputField.value = transcript;
+                }
+                
+                // Remove trailing punctuation from speech sometimes
+                inputField.value = inputField.value.replace(/[.|?]+$/, '');
+
+                updatePreview();
+            };
+
+            recognition.onerror = (event) => {
+                console.error("Speech recognition error", event.error);
+                btn.classList.remove('listening');
+                statusBadge.style.display = 'none';
+            };
+
+            recognition.onend = () => {
+                btn.classList.remove('listening');
+                statusBadge.style.display = 'none';
+            };
+        }
+    </script>
+</body>
+</html>

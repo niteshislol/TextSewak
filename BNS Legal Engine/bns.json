@@ -1,0 +1,2508 @@
+[
+  {
+    "chapter": 1,
+    "chapter_title": "preliminary",
+    "Section": 1,
+    "section_title": "Short title, commencement and application.",
+    "section_desc": "This section establishes the name of the Act and extends its jurisdiction to offences committed within India, on Indian ships/aircraft, or by Indian citizens abroad."
+  },
+  {
+    "chapter": 1,
+    "chapter_title": "preliminary",
+    "Section": 2,
+    "section_title": "Definitions.",
+    "section_desc": "It provides legal meanings for key terms used throughout the code, such as \"act,\" \"counterfeit,\" \"document,\" \"public servant,\" and \"injury\"."
+  },
+  {
+    "chapter": 1,
+    "chapter_title": "preliminary",
+    "Section": 3,
+    "section_title": "General explanations.",
+    "section_desc": "This section clarifies that all definitions are subject to General Exceptions and explains concepts like \"acts\" including illegal omissions and joint liability."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 4,
+    "section_title": "Punishments.",
+    "section_desc": "It lists the authorized forms of punishment, including death, imprisonment for life, rigorous/simple imprisonment, forfeiture of property, fine, and community service."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 5,
+    "section_title": "Commutation of sentence.",
+    "section_desc": "Grants the appropriate Government the power to commute a sentence (e.g., death or life imprisonment) to a lighter one without the offender's consent."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 6,
+    "section_title": "Fractions of terms of punishment.",
+    "section_desc": "States that for calculating fractions of terms, imprisonment for life is reckoned as equivalent to imprisonment for twenty years."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 7,
+    "section_title": "Sentence may be (in certain cases of imprisonment) wholly or partly rigorous or simple.",
+    "section_desc": "Gives the Court discretion to decide the nature (rigorous or simple) of imprisonment for offences where both are applicable."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 8,
+    "section_title": "Amount of fine, liability in default of payment of fine, etc.",
+    "section_desc": "Specifies that fines must not be excessive and outlines imprisonment terms if a fine is not paid."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 9,
+    "section_title": "Limit of punishment of offence made up of several offences.",
+    "section_desc": "Prevents cumulative punishment for an offence that is made up of parts which are themselves offences."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 10,
+    "section_title": "Punishment of person guilty of one of several offences, judgment stating that it is doubtful of which.",
+    "section_desc": "Mandates the lowest punishment when it is certain an offender committed one of several offences but doubtful which specific one."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 11,
+    "section_title": "Solitary confinement.",
+    "section_desc": "Allows courts to order solitary confinement for a portion of rigorous imprisonment, not exceeding three months total."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 12,
+    "section_title": "Limit of solitary confinement.",
+    "section_desc": "Restricts solitary confinement to fourteen days at a time and seven days per month for longer sentences."
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "of punishments",
+    "Section": 13,
+    "section_title": "Enhanced punishment for certain offences after previous conviction.",
+    "section_desc": "Prescribes life imprisonment or up to ten years for repeat offenders of certain property or coin-related crimes."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 14,
+    "section_title": "Act done by a person bound, or by mistake of fact believing himself bound, by law.",
+    "section_desc": "Protects acts done by someone legally bound to do them, or who believes they are bound due to a factual mistake."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 15,
+    "section_title": "Act of Judge when acting judicially.",
+    "section_desc": "Grants immunity for acts done by a Judge in the exercise of judicial power."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 16,
+    "section_title": "Act done pursuant to judgment or order of Court.",
+    "section_desc": "Protects acts committed in adherence to a court judgment or order, even if the court lacked jurisdiction."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 17,
+    "section_title": "Act done by a person justified, or by mistake of fact believing himself justified, by law.",
+    "section_desc": "Exonerates acts done by a person who is justified by law or believes themselves to be justified by a mistake of fact."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 18,
+    "section_title": "Accident in doing a lawful act.",
+    "section_desc": "States that an accident happening while doing a lawful act with proper care is not an offence."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 19,
+    "section_title": "Act likely to cause harm, but done without criminal intent, and to prevent other harm.",
+    "section_desc": "Protects acts done in good faith to prevent greater harm, even if they are likely to cause harm."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 20,
+    "section_title": "Act of a child under seven years of age.",
+    "section_desc": "Declares that nothing done by a child under seven years old is an offence."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 21,
+    "section_title": "Act of a child above seven and under twelve years of age of immature understanding.",
+    "section_desc": "Exempts children between seven and twelve if they lack the maturity to understand the consequences of their conduct."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 22,
+    "section_title": "Act of a person of unsound mind.",
+    "section_desc": "Exempts acts committed by a person incapable of knowing the nature of the act due to unsoundness of mind."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 23,
+    "section_title": "Act of a person incapable of judgment by reason of intoxication caused against his will.",
+    "section_desc": "Protects a person intoxicated against their will who cannot judge the nature of their actions."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 24,
+    "section_title": "Offence requiring a particular intent or knowledge committed by one who is intoxicated.",
+    "section_desc": "Treats voluntarily intoxicated persons as if they had the same knowledge as a sober person regarding their actions."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 25,
+    "section_title": "Act not intended and not known to be likely to cause death or grievous hurt, done by consent.",
+    "section_desc": "States that acts causing harm are not offences if done with the victim's consent and without intent to cause death or grievous hurt."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 26,
+    "section_title": "Act not intended to cause death, done by consent in good faith for person's benefit.",
+    "section_desc": "Covers acts done for a person's benefit (like surgery) with their consent, even if it entails risk."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 27,
+    "section_title": "Act done in good faith for benefit of child or person of unsound mind, by, or by consent of guardian.",
+    "section_desc": "Allows guardians to consent to acts for the benefit of children or persons of unsound mind."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 28,
+    "section_title": "Consent known to be given under fear or misconception.",
+    "section_desc": "Invalidates consent if given under fear of injury, misconception of fact, or by a person unable to understand."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 29,
+    "section_title": "Exclusion of acts which are offences independently of harm caused.",
+    "section_desc": "Clarifies that consent does not justify acts that are offences regardless of harm to the individual (e.g., miscarriage)."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 30,
+    "section_title": "Act done in good faith for benefit of a person without consent.",
+    "section_desc": "Protects emergency acts done for a person's benefit when they are unable to consent."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 31,
+    "section_title": "Communication made in good faith.",
+    "section_desc": "Protects communications made for a person's benefit (e.g., a doctor's bad news) even if it causes harm like shock."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 32,
+    "section_title": "Act to which a person is compelled by threats.",
+    "section_desc": "Protects acts done under threat of instant death, except murder and offences against the State."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 33,
+    "section_title": "Act causing slight harm.",
+    "section_desc": "States that acts causing such slight harm that no ordinary person would complain are not offences."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 34,
+    "section_title": "Things done in private defence.",
+    "section_desc": "Declares that nothing is an offence which is done in the exercise of the right of private defence."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 35,
+    "section_title": "Right of private defence of body and of property.",
+    "section_desc": "Affirms the right to defend one's own or another's body and property against certain offences."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 36,
+    "section_title": "Right of private defence against act of a person of unsound mind, etc.",
+    "section_desc": "Maintains the right of self-defence even if the attacker is legally exempt (e.g., insane or a child)."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 37,
+    "section_title": "Acts against which there is no right of private defence.",
+    "section_desc": "Restricts self-defence against public servants acting in good faith or when there is time to seek public authority assistance."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 38,
+    "section_title": "When right of private defence of body extends to causing death.",
+    "section_desc": "Allows causing death in defense against assaults likely to cause death, grievous hurt, rape, or kidnapping."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 39,
+    "section_title": "When such right extends to causing any harm other than death.",
+    "section_desc": "Allows causing any harm short of death if the offence is not one of those listed in Section 38."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 40,
+    "section_title": "Commencement and continuance of right of private defence of body.",
+    "section_desc": "Describes that the right begins with reasonable apprehension of danger and lasts as long as the danger continues."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 41,
+    "section_title": "When right of private defence of property extends to causing death.",
+    "section_desc": "Permits causing death in defense against robbery, house-breaking by night, or arson of a dwelling."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 42,
+    "section_title": "When such right extends to causing any harm other than death.",
+    "section_desc": "Allows causing harm other than death for property offences not listed in Section 41."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 43,
+    "section_title": "Commencement and continuance of right of private defence of property.",
+    "section_desc": "Defines the timeline for the right of defense against theft, robbery, criminal trespass, and house-breaking."
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "general exceptions",
+    "Section": 44,
+    "section_title": "Right of private defence against deadly assault when there is risk of harm to innocent person.",
+    "section_desc": "Allows taking the risk of harming an innocent person if it's the only way to defend against a deadly assault."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 45,
+    "section_title": "Abetment of a thing.",
+    "section_desc": "Defines abetment as instigating, conspiring, or intentionally aiding a person to do a specific thing."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 46,
+    "section_title": "Abettor.",
+    "section_desc": "Defines an \"abettor\" as the person who abets an offence, regardless of whether the act is committed."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 47,
+    "section_title": "Abetment in India of offences outside India.",
+    "section_desc": "Punishes a person in India who abets an act abroad that would be an offence if committed in India."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 48,
+    "section_title": "Abetment outside India for offence in India.",
+    "section_desc": "Punishes a person outside India who abets the commission of an offence within India."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 49,
+    "section_title": "Punishment of abetment if act abetted is committed in consequence and where no express provision is made for its punishment.",
+    "section_desc": "States that if the abetted act is committed, the abettor receives the same punishment as the offender unless otherwise specified."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 50,
+    "section_title": "Punishment of abetment if person abetted does act with different intention from that of abettor.",
+    "section_desc": "Holds the abettor liable for the punishment of the offence even if the doer had a different intention."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 51,
+    "section_title": "Liability of abettor when one act abetted and different act done.",
+    "section_desc": "Makes the abettor liable for a different act if it was a probable consequence of the abetment."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 52,
+    "section_title": "Abettor when liable to cumulative punishment for act abetted and for act done.",
+    "section_desc": "Makes an abettor liable for both the abetted act and the act done if they constitute distinct offences."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 53,
+    "section_title": "Liability of abettor for an effect caused by act abetted different from that intended by abettor.",
+    "section_desc": "Holds the abettor liable for an unintended effect if they knew it was likely to be caused by the abetted act."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 54,
+    "section_title": "Abettor present when offence is committed.",
+    "section_desc": "Deems the abettor to have committed the offence themselves if they are present during its commission."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 55,
+    "section_title": "Abetment of offence punishable with death or imprisonment for life.",
+    "section_desc": "Prescribes punishment (up to 7 years) for abetting serious offences even if they are not committed."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 56,
+    "section_title": "Abetment of offence punishable with imprisonment.",
+    "section_desc": "Prescribes punishment (one-fourth of the term) for abetting imprisonable offences that are not committed."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 57,
+    "section_title": "Abetting commission of offence by public or by more than ten persons.",
+    "section_desc": "Punishes abetting a large group or the public to commit an offence with up to 3 years imprisonment."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 58,
+    "section_title": "Concealing design to commit offence punishable with death or imprisonment for life.",
+    "section_desc": "Punishes voluntarily concealing a plan to commit a serious offence with imprisonment up to 7 years."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 59,
+    "section_title": "Public servant concealing design to commit offence which it is his duty to prevent.",
+    "section_desc": "Punishes a public servant who conceals a plan to commit an offence they are duty-bound to prevent."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 60,
+    "section_title": "Concealing design to commit offence punishable with imprisonment.",
+    "section_desc": "Punishes concealing a plan to commit an imprisonable offence with a fraction of the offence's term."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 61,
+    "section_title": "Criminal conspiracy.",
+    "section_desc": "Defines conspiracy as an agreement between two or more to do an illegal act and prescribes punishment based on the offence planned."
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "of abetment, criminal conspiracy and attempt",
+    "Section": 62,
+    "section_title": "Punishment for attempting to commit offences punishable with imprisonment for life or other imprisonment.",
+    "section_desc": "Punishes attempts to commit offences with up to one-half of the imprisonment provided for the offence itself."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 63,
+    "section_title": "Rape.",
+    "section_desc": "Defines rape as specific acts of sexual penetration or manipulation without consent or under coercive circumstances."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 64,
+    "section_title": "Punishment for rape.",
+    "section_desc": "Prescribes rigorous imprisonment of not less than ten years to life, plus a fine, for the offence of rape."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 65,
+    "section_title": "Punishment for rape in certain cases.",
+    "section_desc": "Mandates rigorous imprisonment of twenty years to life for rape of a woman under sixteen or twelve years of age."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 66,
+    "section_title": "Punishment for causing death or resulting in persistent vegetative state of victim.",
+    "section_desc": "Prescribes rigorous imprisonment of twenty years to life or death if the rape causes death or a vegetative state."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 67,
+    "section_title": "Sexual intercourse by husband upon his wife during separation.",
+    "section_desc": "Punishes a husband having non-consensual sex with his wife during legal separation with 2 to 7 years in prison."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 68,
+    "section_title": "Sexual intercourse by a person in authority.",
+    "section_desc": "Punishes persons in authority (e.g., public servants, jail staff) who induce sex with women in their custody."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 69,
+    "section_title": "Sexual intercourse by employing deceitful means, etc.",
+    "section_desc": "Criminalizes sexual intercourse obtained by false promises of marriage or employment."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 70,
+    "section_title": "Gang rape.",
+    "section_desc": "Punishes group rape with imprisonment of not less than twenty years to life; death penalty possible if victim is under 18."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 71,
+    "section_title": "Punishment for repeat offenders.",
+    "section_desc": "Mandates life imprisonment or death for persons previously convicted of rape offences."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 72,
+    "section_title": "Disclosure of identity of victim of certain offences, etc.",
+    "section_desc": "Punishes the printing or publishing of the name or identity of victims of sexual offences."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 73,
+    "section_title": "Printing or publishing any matter relating to Court proceedings without permission.",
+    "section_desc": "Prohibits publishing court proceedings regarding sexual offences without permission."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 74,
+    "section_title": "Assault or use of criminal force to woman with intent to outrage her modesty.",
+    "section_desc": "Punishes assaulting a woman to outrage her modesty with imprisonment of 1 to 5 years."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 75,
+    "section_title": "Sexual harassment.",
+    "section_desc": "Defines and punishes acts like unwelcome physical contact, demands for sexual favors, and showing pornography."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 76,
+    "section_title": "Assault or use of criminal force to woman with intent to disrobe.",
+    "section_desc": "Punishes assaulting a woman with the intention of disrobing or compelling her to be naked."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 77,
+    "section_title": "Voyeurism.",
+    "section_desc": "Punishes watching or capturing images of a woman engaging in a private act."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 78,
+    "section_title": "Stalking.",
+    "section_desc": "Punishes following or contacting a woman despite her disinterest, or monitoring her internet use."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 79,
+    "section_title": "Word, gesture or act intended to insult modesty of a woman.",
+    "section_desc": "Punishes words or gestures made to be heard or seen by a woman to insult her modesty."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 80,
+    "section_title": "Dowry death.",
+    "section_desc": "Defines dowry death (death within 7 years of marriage due to dowry demands) and sets punishment of 7 years to life."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 81,
+    "section_title": "Cohabitation caused by man deceitfully inducing belief of lawful marriage.",
+    "section_desc": "Punishes a man who deceives a woman into believing they are married to cohabit with her."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 82,
+    "section_title": "Marrying again during lifetime of husband or wife.",
+    "section_desc": "Punishes bigamy with imprisonment up to 7 years."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 83,
+    "section_title": "Marriage ceremony fraudulently gone through without lawful marriage.",
+    "section_desc": "Punishes performing a marriage ceremony with fraudulent intent knowing it is not valid."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 84,
+    "section_title": "Enticing or taking away or detaining with criminal intent a married woman.",
+    "section_desc": "Punishes taking or detaining a married woman with intent for her to have illicit intercourse."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 85,
+    "section_title": "Husband or relative of husband of a woman subjecting her to cruelty.",
+    "section_desc": "Punishes a husband or his relatives for subjecting a woman to cruelty (mental or physical harassment)."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 86,
+    "section_title": "Cruelty defined.",
+    "section_desc": "Defines \"cruelty\" as conduct likely to drive a woman to suicide or cause grave injury, or harassment for dowry."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 87,
+    "section_title": "Kidnapping, abducting or inducing woman to compel her marriage, etc.",
+    "section_desc": "Punishes kidnapping a woman to force her into marriage or illicit intercourse."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 88,
+    "section_title": "Causing miscarriage.",
+    "section_desc": "Punishes voluntarily causing a woman to miscarry, unless done in good faith to save her life."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 89,
+    "section_title": "Causing miscarriage without woman's consent.",
+    "section_desc": "Prescribes life imprisonment or up to 10 years for causing miscarriage without the woman's consent."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 90,
+    "section_title": "Death caused by act done with intent to cause miscarriage.",
+    "section_desc": "Punishes acts intended to cause miscarriage that result in the woman's death."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 91,
+    "section_title": "Act done with intent to prevent child being born alive or to cause to die after birth.",
+    "section_desc": "Punishes acts preventing a child's live birth or causing it to die after birth."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 92,
+    "section_title": "Causing death of quick unborn child by act amounting to culpable homicide.",
+    "section_desc": "Punishes acts amounting to culpable homicide that cause the death of an unborn quick child."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 93,
+    "section_title": "Exposure and abandonment of child under twelve years of age, by parent or person having care of it.",
+    "section_desc": "Punishes parents or caretakers who abandon a child under twelve years."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 94,
+    "section_title": "Concealment of birth by secret disposal of dead body.",
+    "section_desc": "Punishes secretly disposing of a child's body to conceal its birth."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 95,
+    "section_title": "Hiring, employing or engaging a child to commit an offence.",
+    "section_desc": "Punishes hiring or using a child to commit a crime with 3 to 10 years imprisonment."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 96,
+    "section_title": "Procuration of child.",
+    "section_desc": "Punishes inducing a child to go from any place for the purpose of illicit intercourse."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 97,
+    "section_title": "Kidnapping or abducting child under ten years of age with intent to steal from its person.",
+    "section_desc": "Punishes kidnapping a child under ten with the intent to steal property from their person."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 98,
+    "section_title": "Selling child for purposes of prostitution, etc.",
+    "section_desc": "Punishes selling or disposing of a child for prostitution or illicit intercourse."
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "of offences against woman and child",
+    "Section": 99,
+    "section_title": "Buying child for purposes of prostitution, etc.",
+    "section_desc": "Punishes buying or obtaining a child for prostitution or illicit intercourse."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 100,
+    "section_title": "Culpable homicide.",
+    "section_desc": "Defines culpable homicide as causing death with intention or knowledge that the act is likely to cause death."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 101,
+    "section_title": "Murder.",
+    "section_desc": "Defines murder as culpable homicide with specific intent to cause death or bodily injury sufficient to cause death."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 102,
+    "section_title": "Culpable homicide by causing death of person other than person whose death was intended.",
+    "section_desc": "Treats killing the wrong person (transferred malice) as if the intended person had been killed."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 103,
+    "section_title": "Punishment for murder.",
+    "section_desc": "Prescribes death or imprisonment for life for committing murder, including mob lynching."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 104,
+    "section_title": "Punishment for murder by life-convict.",
+    "section_desc": "Mandates death or life imprisonment for a person already under a life sentence who commits murder."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 105,
+    "section_title": "Punishment for culpable homicide not amounting to murder.",
+    "section_desc": "Punishes culpable homicide with imprisonment for life or up to 10 years depending on intent."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 106,
+    "section_title": "Causing death by negligence.",
+    "section_desc": "Punishes causing death by rash or negligent acts (including driving) not amounting to culpable homicide."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 107,
+    "section_title": "Abetment of suicide of child or person of unsound mind.",
+    "section_desc": "Punishes abetting the suicide of a vulnerable person with death or life imprisonment."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 108,
+    "section_title": "Abetment of suicide.",
+    "section_desc": "Punishes abetting the suicide of any person with imprisonment up to 10 years."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 109,
+    "section_title": "Attempt to murder.",
+    "section_desc": "Punishes acts done with intent to murder that fail; if hurt is caused, life imprisonment applies."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 110,
+    "section_title": "Attempt to commit culpable homicide.",
+    "section_desc": "Punishes acts done with intent to commit culpable homicide; penalties increase if hurt is caused."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 111,
+    "section_title": "Organised crime.",
+    "section_desc": "Defines and punishes continuing unlawful activities by crime syndicates, including kidnapping and economic offences."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 112,
+    "section_title": "Petty organised crime.",
+    "section_desc": "Punishes theft, snatching, and similar acts committed by members of a gang."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 113,
+    "section_title": "Terrorist act.",
+    "section_desc": "Defines terrorist acts threatening national integrity and prescribes death or life imprisonment for acts causing death."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 114,
+    "section_title": "Hurt.",
+    "section_desc": "Defines \"hurt\" as causing bodily pain, disease, or infirmity to any person."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 115,
+    "section_title": "Voluntarily causing hurt.",
+    "section_desc": "Punishes voluntarily causing hurt with imprisonment up to one year or fine."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 116,
+    "section_title": "Grievous hurt.",
+    "section_desc": "Lists eight specific types of severe injury, including emasculation and blinding, designated as \"grievous\"."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 117,
+    "section_title": "Voluntarily causing grievous hurt.",
+    "section_desc": "Punishes voluntarily causing grievous hurt with imprisonment up to seven years."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 118,
+    "section_title": "Voluntarily causing hurt or grievous hurt by dangerous weapons or means.",
+    "section_desc": "Increases punishment when hurt is caused by instruments like knives, fire, or poison."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 119,
+    "section_title": "Voluntarily causing hurt or grievous hurt to extort property, or to constrain to an illegal act.",
+    "section_desc": "Punishes causing hurt to force someone to deliver property or commit an illegal act."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 120,
+    "section_title": "Voluntarily causing hurt or grievous hurt to extort confession, or to compel restoration of property.",
+    "section_desc": "Punishes causing hurt to force a confession or the restoration of property."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 121,
+    "section_title": "Voluntarily causing hurt or grievous hurt to deter public servant from his duty.",
+    "section_desc": "Punishes causing hurt to a public servant to prevent them from doing their duty."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 122,
+    "section_title": "Voluntarily causing hurt or grievous hurt on provocation.",
+    "section_desc": "Provides reduced punishment if the hurt was caused under grave and sudden provocation."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 123,
+    "section_title": "Causing hurt by means of poison, etc., with intent to commit an offence.",
+    "section_desc": "Punishes administering poison or drugs to facilitate a crime with up to 10 years imprisonment."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 124,
+    "section_title": "Voluntarily causing grievous hurt by use of acid, etc.",
+    "section_desc": "Punishes acid attacks causing permanent damage with minimum 10 years to life imprisonment."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 125,
+    "section_title": "Act endangering life or personal safety of others.",
+    "section_desc": "Punishes rash or negligent acts that endanger human life or safety."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 126,
+    "section_title": "Wrongful restraint.",
+    "section_desc": "Punishes obstructing a person from proceeding in a direction they have a right to go."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 127,
+    "section_title": "Wrongful confinement.",
+    "section_desc": "Punishes restraining a person within certain limits; penalties increase for longer confinement."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 128,
+    "section_title": "Force.",
+    "section_desc": "Defines \"force\" as causing motion, change of motion, or cessation of motion to another person."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 129,
+    "section_title": "Criminal force.",
+    "section_desc": "Defines criminal force as using force without consent to commit an offence or cause injury/fear."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 130,
+    "section_title": "Assault.",
+    "section_desc": "Defines assault as making a gesture or preparation that causes apprehension of criminal force."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 131,
+    "section_title": "Punishment for assault or criminal force otherwise than on grave provocation.",
+    "section_desc": "Punishes assault or criminal force with up to 3 months imprisonment unless there is grave provocation."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 132,
+    "section_title": "Assault or criminal force to deter public servant from discharge of his duty.",
+    "section_desc": "Punishes assaulting a public servant to deter them from their duty."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 133,
+    "section_title": "Assault or criminal force with intent to dishonour person, otherwise than on grave provocation.",
+    "section_desc": "Punishes assault intended to dishonour a person (e.g., pulling a veil)."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 134,
+    "section_title": "Assault or criminal force in attempt to commit theft of property carried by a person.",
+    "section_desc": "Punishes assault committed while attempting to steal property carried by a person."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 135,
+    "section_title": "Assault or criminal force in attempt to wrongfully confine a person.",
+    "section_desc": "Punishes assault committed in an attempt to wrongfully confine a person."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 136,
+    "section_title": "Assault or criminal force on grave provocation.",
+    "section_desc": "Prescribes lighter punishment for assault committed under grave and sudden provocation."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 137,
+    "section_title": "Kidnapping.",
+    "section_desc": "Defines kidnapping from India and from lawful guardianship, punishable by up to 7 years."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 138,
+    "section_title": "Abduction.",
+    "section_desc": "Defines abduction as compelling or inducing a person to go from any place by force or deceit."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 139,
+    "section_title": "Kidnapping or maiming a child for purposes of begging.",
+    "section_desc": "Punishes kidnapping or maiming a child for begging purposes with 10 years to life imprisonment."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 140,
+    "section_title": "Kidnapping or abducting in order to murder or for ransom, etc.",
+    "section_desc": "Punishes kidnapping with intent to murder, or for ransom, with death or life imprisonment."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 141,
+    "section_title": "Importation of girl or boy from foreign country.",
+    "section_desc": "Punishes importing minors from abroad for illicit intercourse."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 142,
+    "section_title": "Wrongfully concealing or keeping in confinement, kidnapped or abducted person.",
+    "section_desc": "Punishes concealing a person known to have been kidnapped."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 143,
+    "section_title": "Trafficking of person.",
+    "section_desc": "Criminalizes recruiting or transporting persons by force or fraud for exploitation."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 144,
+    "section_title": "Exploitation of a trafficked person.",
+    "section_desc": "Punishes engaging a trafficked child or person for sexual exploitation."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 145,
+    "section_title": "Habitual dealing in slaves.",
+    "section_desc": "Punishes habitual importing, buying, or selling of slaves."
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "of offences affecting the human body",
+    "Section": 146,
+    "section_title": "Unlawful compulsory labour.",
+    "section_desc": "Punishes compelling a person to labor against their will."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 147,
+    "section_title": "Waging, or attempting to wage war, or abetting waging of war, against Government of India.",
+    "section_desc": "Punishes waging, attempting, or abetting war against the Government with death or life imprisonment."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 148,
+    "section_title": "Conspiracy to commit offences punishable by section 147.",
+    "section_desc": "Punishes conspiracy to wage war or overawe the government by criminal force."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 149,
+    "section_title": "Collecting arms, etc., with intention of waging war against Government of India.",
+    "section_desc": "Punishes collecting men or arms to prepare for war against the Government."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 150,
+    "section_title": "Concealing with intent to facilitate design to wage war.",
+    "section_desc": "Punishes concealing a design to wage war with intent to facilitate it."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 151,
+    "section_title": "Assaulting President, Governor, etc., with intent to compel or restrain exercise of any lawful power.",
+    "section_desc": "Punishes assaulting high officials to compel or restrain the exercise of their lawful powers."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 152,
+    "section_title": "Act endangering sovereignty, unity and integrity of India.",
+    "section_desc": "Punishes acts exciting secession, armed rebellion, or subversive activities."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 153,
+    "section_title": "Waging war against Government of any foreign State at peace with Government of India.",
+    "section_desc": "Punishes waging war against a foreign power that is at peace with India."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 154,
+    "section_title": "Committing depredation on territories of foreign State at peace with Government of India.",
+    "section_desc": "Punishes plundering or looting territories of a foreign state at peace with India."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 155,
+    "section_title": "Receiving property taken by war or depredation mentioned in sections 153 and 154.",
+    "section_desc": "Punishes receiving property known to have been taken in war or depredation."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 156,
+    "section_title": "Public servant voluntarily allowing prisoner of State or war to escape.",
+    "section_desc": "Punishes a public servant who voluntarily allows a State prisoner to escape."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 157,
+    "section_title": "Public servant negligently suffering such prisoner to escape.",
+    "section_desc": "Punishes a public servant whose negligence allows a State prisoner to escape."
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "of offences against the state",
+    "Section": 158,
+    "section_title": "Aiding escape of, rescuing or harbouring such prisoner.",
+    "section_desc": "Punishes aiding, rescuing, or harbouring a State prisoner or prisoner of war."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 159,
+    "section_title": "Abetting mutiny, or attempting to seduce a soldier, sailor or airman from his duty.",
+    "section_desc": "Punishes abetting mutiny or seducing a soldier/sailor/airman from their duty."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 160,
+    "section_title": "Abetment of mutiny, if mutiny is committed in consequence thereof.",
+    "section_desc": "Punishes abetting mutiny with death or life imprisonment if the mutiny actually occurs."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 161,
+    "section_title": "Abetment of assault by soldier, sailor or airman on his superior officer, when in execution of his office.",
+    "section_desc": "Punishes abetting an assault by a soldier on a superior officer."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 162,
+    "section_title": "Abetment of such assault, if assault committed.",
+    "section_desc": "Prescribes harsher punishment if the abetted assault on a superior officer is actually committed."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 163,
+    "section_title": "Abetment of desertion of soldier, sailor or airman.",
+    "section_desc": "Punishes abetting the desertion of a soldier, sailor, or airman."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 164,
+    "section_title": "Harbouring deserter.",
+    "section_desc": "Punishes harbouring a deserter, knowing they have deserted (except for spouses)."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 165,
+    "section_title": "Deserter concealed on board merchant vessel through negligence of master.",
+    "section_desc": "Punishes the master of a merchant vessel for negligently allowing a deserter to conceal themselves."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 166,
+    "section_title": "Abetment of act of insubordination by soldier, sailor or airman.",
+    "section_desc": "Punishes abetting an act of insubordination by a soldier, sailor, or airman."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 167,
+    "section_title": "Persons subject to certain Acts.",
+    "section_desc": "Clarifies the application of these sections to persons subject to specific military laws."
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "of offences relating to the army, navy and air force",
+    "Section": 168,
+    "section_title": "Wearing garb or carrying token used by soldier, sailor or airman.",
+    "section_desc": "Punishes wearing the dress of a soldier/sailor/airman with intent to deceive people into believing one belongs to the forces."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 169,
+    "section_title": "Candidate, electoral right defined.",
+    "section_desc": "Defines \"candidate\" and \"electoral right\" for the purpose of election offences."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 170,
+    "section_title": "Bribery.",
+    "section_desc": "Defines bribery as giving gratification to induce a person to exercise an electoral right."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 171,
+    "section_title": "Undue influence at elections.",
+    "section_desc": "Defines undue influence as voluntarily interfering with the free exercise of an electoral right."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 172,
+    "section_title": "Personation at elections.",
+    "section_desc": "Defines personation as voting in another's name or voting twice."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 173,
+    "section_title": "Punishment for bribery.",
+    "section_desc": "Prescribes imprisonment up to one year or fine for bribery."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 174,
+    "section_title": "Punishment for undue influence or personation at an election.",
+    "section_desc": "Prescribes imprisonment for undue influence or personation at an election."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 175,
+    "section_title": "False statement in connection with an election.",
+    "section_desc": "Punishes making false statements about a candidate's character to affect the election result."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 176,
+    "section_title": "Illegal payments in connection with an election.",
+    "section_desc": "Punishes unauthorized payments aimed at promoting a candidate's election."
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "of offences relating to elections",
+    "Section": 177,
+    "section_title": "Failure to keep election accounts.",
+    "section_desc": "Punishes the failure to maintain accounts of election expenses as required by law."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 178,
+    "section_title": "Counterfeiting coin, Government stamps, currency-notes or bank-notes.",
+    "section_desc": "Punishes the act of counterfeiting coins, stamps, or currency notes with imprisonment for life or up to 10 years."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 179,
+    "section_title": "Using as genuine, forged or counterfeit coin, Government stamp, currency-notes or bank-notes.",
+    "section_desc": "Punishes using or trading counterfeit items as if they were genuine."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 180,
+    "section_title": "Possession of forged or counterfeit coin, Government stamp, currency-notes or bank-notes.",
+    "section_desc": "Punishes the possession of counterfeit currency or stamps with intent to use them."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 181,
+    "section_title": "Making or possessing instruments or materials for forging or counterfeiting coin, Government stamp, currency-notes or bank-notes.",
+    "section_desc": "Punishes making or possessing machinery or tools for counterfeiting."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 182,
+    "section_title": "Making or using documents resembling currency-notes or bank-notes.",
+    "section_desc": "Punishes making documents that look like currency notes to deceive people."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 183,
+    "section_title": "Effacing writing from substance bearing Government stamp, or removing from document a stamp used for it, with intent to cause loss to Government.",
+    "section_desc": "Punishes removing writing from a stamp or removing a stamp from a document to cause loss to Government."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 184,
+    "section_title": "Using Government stamp known to have been before used.",
+    "section_desc": "Punishes reusing a government stamp that has already been used."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 185,
+    "section_title": "Erasure of mark denoting that stamp has been used.",
+    "section_desc": "Punishes erasing a cancellation mark from a stamp to use it again."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 186,
+    "section_title": "Prohibition of fictitious stamps.",
+    "section_desc": "Prohibits the creation or possession of fictitious stamps."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 187,
+    "section_title": "Person employed in mint causing coin to be of different weight or composition from that fixed by law.",
+    "section_desc": "Punishes mint employees who unlawfully alter the weight or composition of coins."
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+    "Section": 188,
+    "section_title": "Unlawfully taking coining instrument from mint.",
+    "section_desc": "Punishes taking tools or instruments from a mint without lawful authority."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 189,
+    "section_title": "Unlawful assembly.",
+    "section_desc": "Defines an unlawful assembly as a group of five or more persons with a common illegal object."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 190,
+    "section_title": "Every member of unlawful assembly guilty of offence committed in prosecution of common object.",
+    "section_desc": "Makes every member of an unlawful assembly guilty of any offence committed in prosecution of the common object."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 191,
+    "section_title": "Rioting.",
+    "section_desc": "Defines rioting as the use of force or violence by an unlawful assembly or its members."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 192,
+    "section_title": "Wantonly giving provocation with intent to cause riot- if rioting be committed; if not committed.",
+    "section_desc": "Punishes giving provocation knowing it is likely to cause rioting."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 193,
+    "section_title": "Liability of owner, occupier, etc., of land on which an unlawful assembly or riot takes place.",
+    "section_desc": "Holds landowners liable if they fail to prevent or report an unlawful assembly on their land."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 194,
+    "section_title": "Affray.",
+    "section_desc": "Defines affray as two or more persons fighting in a public place and disturbing the peace."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 195,
+    "section_title": "Assaulting or obstructing public servant when suppressing riot, etc.",
+    "section_desc": "Punishes assaulting a public servant who is attempting to suppress a riot."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 196,
+    "section_title": "Promoting enmity between different groups on grounds of religion, race, place of birth, residence, language, etc., and doing acts prejudicial to maintenance of harmony.",
+    "section_desc": "Punishes acts that promote disharmony or enmity between groups on grounds of religion, race, etc."
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "of offences against the public tranquillity",
+    "Section": 197,
+    "section_title": "Imputations, assertions prejudicial to national integration.",
+    "section_desc": "Punishes assertions that harm national integration, such as claiming a group should be deprived of citizenship."
+  },
+  {
+    "chapter": 12,
+    "chapter_title": "of offences by or relating to public servants",
+    "Section": 198,
+    "section_title": "Public servant disobeying law, with intent to cause injury to any person.",
+    "section_desc": "Punishes a public servant who disobeys the law with intent to cause injury to any person."
+  },
+  {
+    "chapter": 12,
+    "chapter_title": "of offences by or relating to public servants",
+    "Section": 199,
+    "section_title": "Public servant disobeying direction under law.",
+    "section_desc": "Punishes disobedience of legal directions by public servants."
+  },
+  {
+    "chapter": 12,
+    "chapter_title": "of offences by or relating to public servants",
+    "Section": 200,
+    "section_title": "Punishment for non-treatment of victim.",
+    "section_desc": "Punishes hospitals or practitioners who refuse legally required treatment to victims."
+  },
+  {
+    "chapter": 12,
+    "chapter_title": "of offences by or relating to public servants",
+    "Section": 201,
+    "section_title": "Public servant framing an incorrect document with intent to cause injury.",
+    "section_desc": "Punishes a public servant who frames a document incorrectly with intent to cause injury."
+  },
+  {
+    "chapter": 12,
+    "chapter_title": "of offences by or relating to public servants",
+    "Section": 202,
+    "section_title": "Public servant unlawfully engaging in trade.",
+    "section_desc": "Punishes a public servant who engages in trade when legally prohibited from doing so."
+  },
+  {
+    "chapter": 12,
+    "chapter_title": "of offences by or relating to public servants",
+    "Section": 203,
+    "section_title": "Public servant unlawfully buying or bidding for property.",
+    "section_desc": "Punishes a public servant buying or bidding for property they are legally restricted from purchasing."
+  },
+  {
+    "chapter": 12,
+    "chapter_title": "of offences by or relating to public servants",
+    "Section": 204,
+    "section_title": "Personating a public servant.",
+    "section_desc": "Punishes pretending to be a public servant and doing any act in that assumed character."
+  },
+  {
+    "chapter": 12,
+    "chapter_title": "of offences by or relating to public servants",
+    "Section": 205,
+    "section_title": "Wearing garb or carrying token used by public servant with fraudulent intent.",
+    "section_desc": "Punishes wearing the dress or token of a public servant with fraudulent intent."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 206,
+    "section_title": "Absconding to avoid service of summons or other proceeding.",
+    "section_desc": "Punishes absconding to avoid being served with a legal summons or notice."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 207,
+    "section_title": "Preventing service of summons or other proceeding, or preventing publication thereof.",
+    "section_desc": "Punishes preventing the serving or publishing of a summons or proceeding."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 208,
+    "section_title": "Non-attendance in obedience to an order from public servant.",
+    "section_desc": "Punishes failing to attend at a specified time and place when legally ordered by a public servant."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 209,
+    "section_title": "Non-appearance in response to a proclamation under section 84 of Bharatiya Nagarik Suraksha Sanhita, 2023.",
+    "section_desc": "Punishes failure to appear after a proclamation requiring appearance has been issued."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 210,
+    "section_title": "Omission to produce document or electronic record to public servant by person legally bound to produce it.",
+    "section_desc": "Punishes the intentional omission to produce a document to a public servant when legally bound."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 211,
+    "section_title": "Omission to give notice or information to public servant by person legally bound to give it.",
+    "section_desc": "Punishes omitting to give notice or information to a public servant when legally required."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 212,
+    "section_title": "Furnishing false information.",
+    "section_desc": "Punishes furnishing information known to be false to a public servant."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 213,
+    "section_title": "Refusing oath or affirmation when duly required by public servant to make it.",
+    "section_desc": "Punishes refusing to take an oath or affirmation when required by a public servant."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 214,
+    "section_title": "Refusing to answer public servant authorised to question.",
+    "section_desc": "Punishes refusing to answer questions put by a public servant authorized to ask."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 215,
+    "section_title": "Refusing to sign statement.",
+    "section_desc": "Punishes refusing to sign a statement when required by a public servant."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 216,
+    "section_title": "False statement on oath or affirmation to public servant or person authorised to administer an oath or affirmation.",
+    "section_desc": "Punishes making a false statement on oath to a public servant."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 217,
+    "section_title": "False information, with intent to cause public servant to use his lawful power to injury of another person.",
+    "section_desc": "Punishes giving false information to make a public servant use their power to injure another person."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 218,
+    "section_title": "Resistance to taking of property by lawful authority of a public servant.",
+    "section_desc": "Punishes resisting the lawful taking of property by a public servant."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 219,
+    "section_title": "Obstructing sale of property offered for sale by authority of public servant.",
+    "section_desc": "Punishes obstructing a sale of property conducted by lawful authority."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 220,
+    "section_title": "Illegal purchase or bid for property offered for sale by authority of public servant.",
+    "section_desc": "Punishes illegal bidding for property offered for sale by public authority."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 221,
+    "section_title": "Obstructing public servant in discharge of public functions.",
+    "section_desc": "Punishes voluntarily obstructing a public servant in the discharge of their public functions."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 222,
+    "section_title": "Omission to assist public servant when bound by law to give assistance.",
+    "section_desc": "Punishes omission to give assistance to a public servant when bound by law to do so."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 223,
+    "section_title": "Disobedience to order duly promulgated by public servant.",
+    "section_desc": "Punishes disobedience to an order issued by a public servant that causes obstruction or danger."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 224,
+    "section_title": "Threat of injury to public servant.",
+    "section_desc": "Punishes threatening a public servant with injury to induce them to do or forbear an act."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 225,
+    "section_title": "Threat of injury to induce person to refrain from applying for protection to public servant.",
+    "section_desc": "Punishes threatening a person to prevent them from seeking legal protection."
+  },
+  {
+    "chapter": 13,
+    "chapter_title": "of contempts of the lawful authority of public servants",
+    "Section": 226,
+    "section_title": "Attempt to commit suicide to compel or restrain exercise of lawful power.",
+    "section_desc": "Punishes attempting suicide to coerce a public authority."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 227,
+    "section_title": "Giving false evidence.",
+    "section_desc": "Defines giving false evidence as making a false statement on oath or in a legal provision."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 228,
+    "section_title": "Fabricating false evidence.",
+    "section_desc": "Punishes creating false circumstances or entries intended to appear in evidence and mislead a judge."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 229,
+    "section_title": "Punishment for false evidence.",
+    "section_desc": "Prescribes imprisonment up to 7 years for giving false evidence in judicial proceedings."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 230,
+    "section_title": "Giving or fabricating false evidence with intent to procure conviction of capital offence.",
+    "section_desc": "Punishes giving false evidence intending to cause an innocent person to be convicted and executed."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 231,
+    "section_title": "Giving or fabricating false evidence with intent to procure conviction of offence punishable with imprisonment for life or imprisonment.",
+    "section_desc": "Punishes giving false evidence to cause conviction for an offence punishable with imprisonment."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 232,
+    "section_title": "Threatening any person to give false evidence.",
+    "section_desc": "Punishes threatening someone to force them to give false testimony."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 233,
+    "section_title": "Using evidence known to be false.",
+    "section_desc": "Punishes using evidence known to be false as if it were genuine."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 234,
+    "section_title": "Issuing or signing false certificate.",
+    "section_desc": "Punishes issuing a certificate knowing it to be false in a material point."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 235,
+    "section_title": "Using as true a certificate known to be false.",
+    "section_desc": "Punishes using a false certificate as true."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 236,
+    "section_title": "False statement made in declaration which is by law receivable as evidence.",
+    "section_desc": "Punishes making a false statement in a declaration receivable as evidence."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 237,
+    "section_title": "Using as true such declaration knowing it to be false.",
+    "section_desc": "Punishes using a false declaration as true."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 238,
+    "section_title": "Causing disappearance of evidence of offence, or giving false information to screen offender.",
+    "section_desc": "Punishes destroying evidence or giving false info to screen an offender."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 239,
+    "section_title": "Intentional omission to give information of offence by person bound to inform.",
+    "section_desc": "Punishes omitting to give information about an offence when bound to do so."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 240,
+    "section_title": "Giving false information respecting an offence committed.",
+    "section_desc": "Punishes giving false information about a committed offence."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 241,
+    "section_title": "Destruction of document or electronic record to prevent its production as evidence.",
+    "section_desc": "Punishes destroying a document to prevent it from being used as evidence."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 242,
+    "section_title": "False personation for purpose of act or proceeding in suit or prosecution.",
+    "section_desc": "Punishes falsely personating another in a civil or criminal proceeding."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 243,
+    "section_title": "Fraudulent removal or concealment of property to prevent its seizure as forfeited or in execution.",
+    "section_desc": "Punishes removing property to prevent its lawful seizure or forfeiture."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 244,
+    "section_title": "Fraudulent claim to property to prevent its seizure as forfeited or in execution.",
+    "section_desc": "Punishes making a fraudulent claim to property to prevent its seizure."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 245,
+    "section_title": "Fraudulently suffering decree for sum not due.",
+    "section_desc": "Punishes suffering a court decree for a sum not due to defraud creditors."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 246,
+    "section_title": "Dishonestly making false claim in Court.",
+    "section_desc": "Punishes making a false claim in court to injure or annoy another."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 247,
+    "section_title": "Fraudulently obtaining decree for sum not due.",
+    "section_desc": "Punishes obtaining a court decree for a sum not due."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 248,
+    "section_title": "False charge of offence made with intent to injure.",
+    "section_desc": "Punishes making a false charge of an offence with intent to injure."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 249,
+    "section_title": "Harbouring offender.",
+    "section_desc": "Punishes harbouring a person known to have committed an offence."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 250,
+    "section_title": "Taking gift, etc., to screen an offender from punishment.",
+    "section_desc": "Punishes taking a bribe to conceal an offence or screen an offender."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 251,
+    "section_title": "Offering gift or restoration of property in consideration of screening offender.",
+    "section_desc": "Punishes offering a bribe to screen an offender."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 252,
+    "section_title": "Taking gift to help to recover stolen property, etc.",
+    "section_desc": "Punishes taking money to recover stolen property without helping to apprehend the thief."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 253,
+    "section_title": "Harbouring offender who has escaped from custody or whose apprehension has been ordered.",
+    "section_desc": "Punishes harbouring an offender who has escaped custody."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 254,
+    "section_title": "Penalty for harbouring robbers or dacoits.",
+    "section_desc": "Punishes harbouring groups of robbers or dacoits."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 255,
+    "section_title": "Public servant disobeying direction of law with intent to save person from punishment or property from forfeiture.",
+    "section_desc": "Punishes a public servant disobeying law to save someone from punishment."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 256,
+    "section_title": "Public servant framing incorrect record or writing with intent to save person from punishment or property from forfeiture.",
+    "section_desc": "Punishes a public servant framing an incorrect record to save someone from punishment."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 257,
+    "section_title": "Public servant in judicial proceeding corruptly making report, etc., contrary to law.",
+    "section_desc": "Punishes a public servant making a report contrary to law in a judicial proceeding."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 258,
+    "section_title": "Commitment for trial or confinement by person having authority who knows that he is acting contrary to law.",
+    "section_desc": "Punishes a person in authority who commits someone for trial knowing it is contrary to law."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 259,
+    "section_title": "Intentional omission to apprehend on part of public servant bound to apprehend.",
+    "section_desc": "Punishes a public servant who intentionally omits to apprehend an offender."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 260,
+    "section_title": "Intentional omission to apprehend on part of public servant bound to apprehend person under sentence or lawfully committed.",
+    "section_desc": "Punishes omission to apprehend a person under sentence."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 261,
+    "section_title": "Escape from confinement or custody negligently suffered by public servant.",
+    "section_desc": "Punishes a public servant for negligently allowing a prisoner to escape."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 262,
+    "section_title": "Resistance or obstruction by a person to his lawful apprehension.",
+    "section_desc": "Punishes resisting one's own lawful apprehension."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 263,
+    "section_title": "Resistance or obstruction to lawful apprehension of another person.",
+    "section_desc": "Punishes resisting the lawful apprehension of another person."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 264,
+    "section_title": "Omission to apprehend, or sufferance of escape, on part of public servant, in cases not otherwise provided for.",
+    "section_desc": "Punishes omission to apprehend in cases not otherwise provided for."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 265,
+    "section_title": "Resistance or obstruction to lawful apprehension or escape or rescue in cases not otherwise provided for.",
+    "section_desc": "Punishes resistance to apprehension in cases not otherwise provided for."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 266,
+    "section_title": "Violation of condition of remission of punishment.",
+    "section_desc": "Punishes violating the conditions under which a sentence was suspended or remitted."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 267,
+    "section_title": "Intentional insult or interruption to public servant sitting in judicial proceeding.",
+    "section_desc": "Punishes insulting a public servant during a judicial proceeding."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 268,
+    "section_title": "Personation of assessor.",
+    "section_desc": "Punishes pretending to be an assessor or juror."
+  },
+  {
+    "chapter": 14,
+    "chapter_title": "of false evidence and offences against public justice",
+    "Section": 269,
+    "section_title": "Failure by person released on bail or bond to appear in Court.",
+    "section_desc": "Punishes failure to appear in court after being released on bail."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 270,
+    "section_title": "Public nuisance.",
+    "section_desc": "Defines acts that cause common injury, danger, or annoyance to the public."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 271,
+    "section_title": "Negligent act likely to spread infection of disease dangerous to life.",
+    "section_desc": "Punishes negligent acts likely to spread a dangerous disease."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 272,
+    "section_title": "Malignant act likely to spread infection of disease dangerous to life.",
+    "section_desc": "Punishes malignant acts done with intent to spread a dangerous disease."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 273,
+    "section_title": "Disobedience to quarantine rule.",
+    "section_desc": "Punishes disobeying rules made to prevent the spread of infection."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 274,
+    "section_title": "Adulteration of food or drink intended for sale.",
+    "section_desc": "Punishes adulterating food or drink intended for sale."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 275,
+    "section_title": "Sale of noxious food or drink.",
+    "section_desc": "Punishes selling food or drink that is noxious or unfit for consumption."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 276,
+    "section_title": "Adulteration of drugs.",
+    "section_desc": "Punishes adulterating drugs to lessen efficacy or make them noxious."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 277,
+    "section_title": "Sale of adulterated drugs.",
+    "section_desc": "Punishes selling adulterated drugs as genuine."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 278,
+    "section_title": "Sale of drug as a different drug or preparation.",
+    "section_desc": "Punishes selling one drug while pretending it is another."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 279,
+    "section_title": "Fouling water of public spring or reservoir.",
+    "section_desc": "Punishes fouling the water of a public spring or reservoir."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 280,
+    "section_title": "Making atmosphere noxious to health.",
+    "section_desc": "Punishes acts that make the atmosphere noxious to health."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 281,
+    "section_title": "Rash driving or riding on a public way.",
+    "section_desc": "Punishes rash or negligent driving on a public way."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 282,
+    "section_title": "Rash navigation of vessel.",
+    "section_desc": "Punishes rash or negligent navigation of a vessel."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 283,
+    "section_title": "Exhibition of false light, mark or buoy.",
+    "section_desc": "Punishes exhibiting false lights to mislead navigators."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 284,
+    "section_title": "Conveying person by water for hire in unsafe or overloaded vessel.",
+    "section_desc": "Punishes conveying persons in an unsafe or overloaded vessel."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 285,
+    "section_title": "Danger or obstruction in public way or line of navigation.",
+    "section_desc": "Punishes causing danger or obstruction in a public way."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 286,
+    "section_title": "Negligent conduct with respect to poisonous substance.",
+    "section_desc": "Punishes negligent handling of poisonous substances."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 287,
+    "section_title": "Negligent conduct with respect to fire or combustible matter.",
+    "section_desc": "Punishes negligent handling of fire or combustible matter."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 288,
+    "section_title": "Negligent conduct with respect to explosive substance.",
+    "section_desc": "Punishes negligent handling of explosive substances."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 289,
+    "section_title": "Negligent conduct with respect to machinery.",
+    "section_desc": "Punishes negligent management of machinery."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 290,
+    "section_title": "Negligent conduct with respect to pulling down, repairing or constructing buildings, etc.",
+    "section_desc": "Punishes negligence in repairing or pulling down buildings."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 291,
+    "section_title": "Negligent conduct with respect to animal.",
+    "section_desc": "Punishes negligence in taking care of animals."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 292,
+    "section_title": "Punishment for public nuisance in cases not otherwise provided for.",
+    "section_desc": "Provides punishment for public nuisances not otherwise punishable."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 293,
+    "section_title": "Continuance of nuisance after injunction to discontinue.",
+    "section_desc": "Punishes continuing a nuisance after being ordered to stop."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 294,
+    "section_title": "Sale, etc., of obscene books, etc.",
+    "section_desc": "Punishes the sale or distribution of obscene books or objects."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 295,
+    "section_title": "Sale, etc., of obscene objects to child.",
+    "section_desc": "Punishes selling obscene objects to a person under eighteen."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 296,
+    "section_title": "Obscene acts and songs.",
+    "section_desc": "Punishes doing obscene acts or singing obscene songs in public."
+  },
+  {
+    "chapter": 15,
+    "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+    "Section": 297,
+    "section_title": "Keeping lottery office.",
+    "section_desc": "Punishes keeping an unauthorized lottery office."
+  },
+  {
+    "chapter": 16,
+    "chapter_title": "of offences relating to religion",
+    "Section": 298,
+    "section_title": "Injuring or defiling place of worship with intent to insult religion of any class.",
+    "section_desc": "Punishes injuring or defiling a place of worship with intent to insult religion."
+  },
+  {
+    "chapter": 16,
+    "chapter_title": "of offences relating to religion",
+    "Section": 299,
+    "section_title": "Deliberate and malicious acts, intended to outrage religious feelings of any class by insulting its religion or religious beliefs.",
+    "section_desc": "Punishes deliberate acts intended to outrage religious feelings by insulting religion."
+  },
+  {
+    "chapter": 16,
+    "chapter_title": "of offences relating to religion",
+    "Section": 300,
+    "section_title": "Disturbing religious assembly.",
+    "section_desc": "Punishes voluntarily disturbing a religious assembly."
+  },
+  {
+    "chapter": 16,
+    "chapter_title": "of offences relating to religion",
+    "Section": 301,
+    "section_title": "Trespassing on burial places, etc.",
+    "section_desc": "Punishes trespassing on burial grounds to wound feelings."
+  },
+  {
+    "chapter": 16,
+    "chapter_title": "of offences relating to religion",
+    "Section": 302,
+    "section_title": "Uttering words, etc., with deliberate intent to wound religious feelings of any person.",
+    "section_desc": "Punishes uttering words or making sounds to wound religious feelings."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 303,
+    "section_title": "Theft.",
+    "section_desc": "Defines theft as moving movable property out of possession without consent and prescribes punishment."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 304,
+    "section_title": "Snatching.",
+    "section_desc": "Defines snatching as forcible or quick seizure of property and prescribes punishment."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 305,
+    "section_title": "Theft in a dwelling house, or means of transportation or place of worship, etc.",
+    "section_desc": "Punishes theft in a building, vessel, or of idols, with imprisonment up to 7 years."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 306,
+    "section_title": "Theft by clerk or servant of property in possession of master.",
+    "section_desc": "Punishes theft committed by a clerk or servant of their master's property."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 307,
+    "section_title": "Theft after preparation made for causing death, hurt or restraint in order to committing of theft.",
+    "section_desc": "Punishes theft committed after preparing to cause death, hurt, or restraint."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 308,
+    "section_title": "Extortion.",
+    "section_desc": "Defines extortion as inducing delivery of property by putting a person in fear of injury."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 309,
+    "section_title": "Robbery.",
+    "section_desc": "Defines robbery as theft or extortion involving death, hurt, or wrongful restraint (definitions vary based on context)."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 310,
+    "section_title": "Dacoity.",
+    "section_desc": "Defines dacoity as robbery committed by five or more persons conjointly."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 311,
+    "section_title": "Robbery, or dacoity, with attempt to cause death or grievous hurt.",
+    "section_desc": "Punishes robbery or dacoity accompanied by an attempt to cause death or grievous hurt."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 312,
+    "section_title": "Attempt to commit robbery or dacoity when armed with deadly weapon.",
+    "section_desc": "Punishes attempting robbery or dacoity while armed with a deadly weapon."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 313,
+    "section_title": "Punishment for belonging to gang of robbers, etc.",
+    "section_desc": "Punishes belonging to a gang associated for habitually committing theft or robbery."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 314,
+    "section_title": "Dishonest misappropriation of property.",
+    "section_desc": "Punishes dishonest misappropriation of movable property for one's own use."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 315,
+    "section_title": "Dishonest misappropriation of property possessed by deceased person at the time of his death.",
+    "section_desc": "Punishes misappropriating property from a deceased person before it is legally distributed."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 316,
+    "section_title": "Criminal breach of trust.",
+    "section_desc": "Punishes a person entrusted with property who dishonestly uses or disposes of it."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 317,
+    "section_title": "Stolen property.",
+    "section_desc": "Defines stolen property and punishes receiving it knowing it to be stolen."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 318,
+    "section_title": "Cheating.",
+    "section_desc": "Defines cheating as deceiving a person to deliver property or do an act causing harm."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 319,
+    "section_title": "Cheating by personation.",
+    "section_desc": "Punishes cheating by pretending to be another person."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 320,
+    "section_title": "Dishonest or fraudulent removal or concealment of property to prevent distribution among creditors.",
+    "section_desc": "Punishes removing property to prevent its distribution among creditors."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 321,
+    "section_title": "Dishonestly or fraudulently preventing debt being available for creditors.",
+    "section_desc": "Punishes fraudulently preventing a debt from being available to creditors."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 322,
+    "section_title": "Dishonest or fraudulent execution of deed of transfer containing false statement of consideration.",
+    "section_desc": "Punishes executing a transfer deed containing false statements of consideration."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 323,
+    "section_title": "Dishonest or fraudulent removal or concealment of property.",
+    "section_desc": "Punishes concealing or removing property to defraud others."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 324,
+    "section_title": "Mischief.",
+    "section_desc": "Defines mischief as causing destruction or damage to property affecting its value."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 325,
+    "section_title": "Mischief by killing or maiming animal.",
+    "section_desc": "Punishes mischief by killing or maiming any animal."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 326,
+    "section_title": "Mischief by injury, inundation, fire or explosive substance, etc.",
+    "section_desc": "Punishes mischief committed by fire or explosive substance intending damage."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 327,
+    "section_title": "Mischief with intent to destroy or make unsafe a rail, aircraft, decked vessel or one of twenty tons burden.",
+    "section_desc": "Punishes mischief with intent to destroy or make unsafe a vessel."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 328,
+    "section_title": "Punishment for intentionally running vessel aground or ashore with intent to commit theft, etc.",
+    "section_desc": "Punishes intentionally running a vessel aground to commit theft."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 329,
+    "section_title": "Criminal trespass and house-trespass.",
+    "section_desc": "Defines criminal trespass as entering property to commit an offence or intimidate."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 330,
+    "section_title": "House-trespass and house-breaking.",
+    "section_desc": "Defines house-trespass as criminal trespass in a human dwelling or place of worship."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 331,
+    "section_title": "Punishment for house-trespass or house-breaking.",
+    "section_desc": "Prescribes punishment for house-trespass and house-breaking."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 332,
+    "section_title": "House-trespass in order to commit offence.",
+    "section_desc": "Punishes house-trespass committed in order to commit an offence punishable with death/life imprisonment."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 333,
+    "section_title": "House-trespass after preparation for hurt, assault or wrongful restraint.",
+    "section_desc": "Punishes house-trespass after making preparation for causing hurt or restraint."
+  },
+  {
+    "chapter": 17,
+    "chapter_title": "of offences against property",
+    "Section": 334,
+    "section_title": "Dishonestly breaking open receptacle containing property.",
+    "section_desc": "Punishes breaking open a closed receptacle containing property."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 335,
+    "section_title": "Making a false document.",
+    "section_desc": "Defines the act of making a false document (forgery core definition)."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 336,
+    "section_title": "Forgery.",
+    "section_desc": "Defines forgery as making a false document with intent to cause damage or deceit."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 337,
+    "section_title": "Forgery of record of Court or of public register, etc.",
+    "section_desc": "Punishes forgery of a court record or public register."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 338,
+    "section_title": "Forgery of valuable security, will, etc.",
+    "section_desc": "Punishes forgery of a valuable security, will, or authority to adopt."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 339,
+    "section_title": "Having possession of document described in section 337 or section 338, knowing it to be forged and intending to use it as genuine.",
+    "section_desc": "Punishes possession of a forged document knowing it to be forged."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 340,
+    "section_title": "Forged document or electronic record and using it as genuine.",
+    "section_desc": "Defines forged document and punishes using it as genuine."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 341,
+    "section_title": "Making or possessing counterfeit seal, etc., with intent to commit forgery punishable under section 338.",
+    "section_desc": "Punishes making or possessing a counterfeit seal or plate for forgery."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 342,
+    "section_title": "Counterfeiting device or mark used for authenticating documents described in section 338, or possessing counterfeit marked material.",
+    "section_desc": "Punishes counterfeiting a device or mark used for authenticating documents."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 343,
+    "section_title": "Fraudulent cancellation, destruction, etc., of will, authority to adopt, or valuable security.",
+    "section_desc": "Punishes fraudulent destruction or cancellation of a will or valuable security."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 344,
+    "section_title": "Falsification of accounts.",
+    "section_desc": "Punishes a clerk or servant who wilfully falsifies accounts to defraud."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 345,
+    "section_title": "Property mark.",
+    "section_desc": "Defines property mark and punishes using a false property mark."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 346,
+    "section_title": "Tampering with property mark with intent to cause injury.",
+    "section_desc": "Punishes tampering with a property mark to cause injury."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 347,
+    "section_title": "Counterfeiting a property mark.",
+    "section_desc": "Punishes counterfeiting a property mark used by another."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 348,
+    "section_title": "Making or possession of any instrument for counterfeiting a property mark.",
+    "section_desc": "Punishes possessing tools for counterfeiting property marks."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 349,
+    "section_title": "Selling goods marked with a counterfeit property mark.",
+    "section_desc": "Punishes selling goods knowing they bear a counterfeit property mark."
+  },
+  {
+    "chapter": 18,
+    "chapter_title": "of offences relating to documents and to property marks",
+    "Section": 350,
+    "section_title": "Making a false mark upon any receptacle containing goods.",
+    "section_desc": "Punishes making a false mark on a package to deceive about its contents."
+  },
+  {
+    "chapter": 19,
+    "chapter_title": "of criminal intimidation, insult, annoyance, defamation, etc",
+    "Section": 351,
+    "section_title": "Criminal intimidation.",
+    "section_desc": "Punishes threatening a person with injury to their person, reputation, or property."
+  },
+  {
+    "chapter": 19,
+    "chapter_title": "of criminal intimidation, insult, annoyance, defamation, etc",
+    "Section": 352,
+    "section_title": "Intentional insult with intent to provoke breach of peace.",
+    "section_desc": "Punishes intentional insult likely to provoke a breach of the peace."
+  },
+  {
+    "chapter": 19,
+    "chapter_title": "of criminal intimidation, insult, annoyance, defamation, etc",
+    "Section": 353,
+    "section_title": "Statements conducing to public mischief.",
+    "section_desc": "Punishes circulating rumors or reports aiming to cause mutiny or public alarm."
+  },
+  {
+    "chapter": 19,
+    "chapter_title": "of criminal intimidation, insult, annoyance, defamation, etc",
+    "Section": 354,
+    "section_title": "Act caused by inducing person to believe that he will be rendered an object of Divine displeasure.",
+    "section_desc": "Punishes inducing a person to do something by making them believe they will face Divine displeasure."
+  },
+  {
+    "chapter": 19,
+    "chapter_title": "of criminal intimidation, insult, annoyance, defamation, etc",
+    "Section": 355,
+    "section_title": "Misconduct in public by a drunken person.",
+    "section_desc": "Punishes a drunken person for causing annoyance in a public place."
+  },
+  {
+    "chapter": 19,
+    "chapter_title": "of criminal intimidation, insult, annoyance, defamation, etc",
+    "Section": 356,
+    "section_title": "Defamation.",
+    "section_desc": "Defines defamation as making an imputation to harm a person's reputation and prescribes punishment."
+  },
+  {
+    "chapter": 19,
+    "chapter_title": "of criminal intimidation, insult, annoyance, defamation, etc",
+    "Section": 357,
+    "section_title": "Breach of contract to attend on and supply wants of helpless person.",
+    "section_desc": "Punishes omitting to supply wants to a helpless person one is bound by contract to care for."
+  },
+  {
+    "chapter": 20,
+    "chapter_title": "repeal and savings",
+    "Section": 358,
+    "section_title": "Repeal and savings.",
+    "section_desc": "Repeals the Indian Penal Code, 1860, while saving acts/rights/penalties incurred under it."
+  }
+]
