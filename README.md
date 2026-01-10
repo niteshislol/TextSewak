@@ -24,6 +24,16 @@
 *   **Legal Insight**: (In-Progress) Analyzes text to suggest relevant BNS (Bharatiya Nyaya Sanhita) sections.
 *   **Export**: Download complaints as formatted Microsoft Word (`.docx`) or Text (`.txt`) files.
 
+## 🏠 Local Mode (No Firebase Required)
+You can run TextSewak entirely offline without setting up Firebase.
+*   **Automatic Detection**: If no API keys are found in `.env`, the app automatically switches to **Local Mode**.
+*   **Auto-Login**: You are instantly logged in as a "Local User".
+*   **Features**:
+    *   ✅ **OCR & PDF Extraction**: Works perfectly (Browser-based).
+    *   ✅ **Offline Voice Dictation**: Works perfectly (Python Server).
+    *   ❌ **History**: Disabled (requires Cloud Database).
+    *   ❌ **Auth**: Disabled (Bypassed).
+
 ---
 
 ## 🏗️ Technical Architecture
