@@ -5,6 +5,12 @@
 ![TextSewak Architecture](Document/textsewak_architecture_diagram.png)
 *(Generate a visual using the prompt in `Document/SYSTEM_PIPELINE.md`)*
 
+## 🚀 Quick Start (One-Click)
+We have added a simple batch script to start all servers (Legal Engine, Speech, Frontend) automatically!
+1. Double-click `run_textsewak.bat` in the project folder.
+2. Wait for the terminal windows to open and initialize.
+3. The app will automatically open in your browser at `http://localhost:8080`.
+
 ## 🚀 Key Features
 
 ### 1. 📝 Intelligent OCR (Optical Character Recognition)
@@ -18,21 +24,28 @@
 *   **Privacy-First**: Audio never leaves your local machine.
 *   **Real-time Editing**: Dictate directly into the OCR result box to make corrections.
 
-### 3. ⚖️ FIR Generator & Legal Analysis
+### 3. ⚖️ BNS Legal Engine (Advanced Analysis)
+*   **Context-Aware Justice**: Analyzes FIR descriptions to suggest accurate **Bharatiya Nyaya Sanhita (BNS)** sections.
+*   **Granular Matching**: Implementation of sentence-level similarity search to find the exact legal provision.
+*   **Top-K Results**: Returns the top 3 most relevant sections with confidence scores.
+*   **Fully Offline**: Uses local `sentence-transformers`—no data leaves your machine.
 *   **Voice-to-FIR**: Generate formal FIR complaints just by speaking details in Hindi.
-*   **Templated Generation**: Auto-formats text for Lost Items, Theft, Cyber Fraud, and more.
-*   **Legal Insight**: (In-Progress) Analyzes text to suggest relevant BNS (Bharatiya Nyaya Sanhita) sections.
 *   **Export**: Download complaints as formatted Microsoft Word (`.docx`) or Text (`.txt`) files.
 
-## 🏠 Local Mode (No Firebase Required)
+## 🏠 Local & Offline Mode
 You can run TextSewak entirely offline without setting up Firebase.
-*   **Automatic Detection**: If no API keys are found in `.env`, the app automatically switches to **Local Mode**.
-*   **Auto-Login**: You are instantly logged in as a "Local User".
-*   **Features**:
-    *   ✅ **OCR & PDF Extraction**: Works perfectly (Browser-based).
-    *   ✅ **Offline Voice Dictation**: Works perfectly (Python Server).
-    *   ❌ **History**: Disabled (requires Cloud Database).
-    *   ❌ **Auth**: Disabled (Bypassed).
+
+### 🔑 Offline Credentials
+Use these credentials to log in without internet:
+*   **Email**: `offline@gmail.com`
+*   **Password**: `offline`
+
+### Features in Local Mode
+*   ✅ **Automatic Detection**: Defaults to Local Mode if `.env` is missing.
+*   ✅ **OCR & PDF Extraction**: Works perfectly (Browser-based).
+*   ✅ **Offline Voice Dictation**: Works perfectly (Python Server).
+*   ✅ **BNS Legal Analysis**: Works perfectly (Local Python Server).
+*   ❌ **Cloud History**: Disabled (requires Firebase).
 
 ---
 
@@ -57,8 +70,8 @@ You can run TextSewak entirely offline without setting up Firebase.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/niteshislol/TextSewak-OCR.git
-cd TextSewak-OCR
+git clone https://github.com/niteshislol/TextSewak.git
+cd TextSewak
 ```
 
 ### 2. Frontend Setup (Client)
@@ -75,7 +88,7 @@ npm run dev
 The offline speech engine runs on a separate Python local server.
 
 ```bash
-cd textsewak_speech/
+cd textsewakspeech/
 # Install Python dependencies
 pip install flask flask-cors vosk pyaudio
 

@@ -1,0 +1,114 @@
+[
+    {
+        "chapter": 1,
+        "chapter_title": "Cyber Crimes",
+        "Section": "IT Act, 2000",
+        "section_title": "Information Technology Act, 2000",
+        "section_desc": "This law deals with cyber crimes like hacking, online fraud, identity theft, spreading obscene content, data theft, and misuse of computers, mobile phones, and the internet."
+    },
+    {
+        "chapter": 2,
+        "chapter_title": "Drug Offenses",
+        "Section": "NDPS Act, 1985",
+        "section_title": "Narcotic Drugs and Psychotropic Substances Act, 1985",
+        "section_desc": "This law deals with crimes related to drugs such as ganja, charas, heroin, cocaine, and other intoxicating substances. It covers their production, sale, transport, possession, and consumption."
+    },
+    {
+        "chapter": 3,
+        "chapter_title": "Child Protection",
+        "Section": "POCSO Act, 2012",
+        "section_title": "Protection of Children from Sexual Offences Act, 2012",
+        "section_desc": "This law protects children below 18 years of age from sexual abuse, sexual harassment, and pornography. It provides strict punishment and ensures child-friendly procedures during police investigation and court trials."
+    },
+    {
+        "chapter": 4,
+        "chapter_title": "Anti-Corruption",
+        "Section": "Prevention of Corruption Act, 1988",
+        "section_title": "Prevention of Corruption Act, 1988",
+        "section_desc": "This law punishes public servants who take bribes or misuse their official position for personal benefit."
+    },
+    {
+        "chapter": 5,
+        "chapter_title": "Dowry Prohibition",
+        "Section": "Dowry Prohibition Act, 1961",
+        "section_title": "Dowry Prohibition Act, 1961",
+        "section_desc": "This law makes giving, taking, or demanding dowry a criminal offence. It aims to protect women from dowry-related harassment, cruelty, and deaths."
+    },
+    {
+        "chapter": 6,
+        "chapter_title": "Wildlife Protection",
+        "Section": "Wildlife Protection Act, 1972",
+        "section_title": "Wildlife Protection Act, 1972",
+        "section_desc": "This law protects wild animals, birds, plants, forests, and protected areas. It punishes illegal hunting, wildlife trade, and destruction of habitats."
+    },
+    {
+        "chapter": 7,
+        "chapter_title": "Child Marriage Prevention",
+        "Section": "PCMA, 2006",
+        "section_title": "Prohibition of Child Marriage Act, 2006",
+        "section_desc": "This law prohibits child marriage and punishes those who perform, promote, or permit marriage of boys below 21 years and girls below 18 years."
+    },
+    {
+        "chapter": 8,
+        "chapter_title": "Anti-Terrorism",
+        "Section": "UAPA, 1967",
+        "section_title": "Unlawful Activities (Prevention) Act, 1967",
+        "section_desc": "This is India's main anti-terrorism law. It is used to prevent terrorist activities, ban unlawful organizations, and take action against activities that threaten the unity, integrity, and security of the nation."
+    },
+    {
+        "chapter": 9,
+        "chapter_title": "Domestic Violence",
+        "Section": "Domestic Violence Act, 2005",
+        "section_title": "Protection of Women from Domestic Violence Act, 2005",
+        "section_desc": "This law protects women from physical, mental, sexual, emotional, and economic abuse within the household. It provides protection orders, residence rights, and legal remedies."
+    },
+    {
+        "chapter": 10,
+        "chapter_title": "Caste-based Atrocities",
+        "Section": "SC/ST Act, 1989",
+        "section_title": "Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act, 1989",
+        "section_desc": "This law protects members of Scheduled Castes and Scheduled Tribes from caste-based discrimination, violence, humiliation, and exploitation. It provides strict punishment for such offences."
+    },
+    {
+        "chapter": 11,
+        "chapter_title": "Money Laundering",
+        "Section": "PMLA, 2002",
+        "section_title": "Prevention of Money Laundering Act, 2002",
+        "section_desc": "This law aims to prevent financial crimes such as black money, illegal property, and terror funding. It allows investigation, attachment, and confiscation of property earned through crime."
+    },
+    {
+        "chapter": 12,
+        "chapter_title": "Weights and Measures",
+        "Section": "Legal Metrology Act, 2009",
+        "section_title": "Legal Metrology Act, 2009",
+        "section_desc": "This law ensures correct weights and measures in trade and business. It prevents cheating of consumers through false measurements."
+    },
+    {
+        "chapter": 13,
+        "chapter_title": "Juvenile Justice",
+        "Section": "Juvenile Justice Act, 2015",
+        "section_title": "Juvenile Justice (Care and Protection of Children) Act, 2015",
+        "section_desc": "This law deals with children who commit crimes and children who need care and protection. It focuses on reform, rehabilitation, adoption, and child welfare rather than strict punishment."
+    },
+    {
+        "chapter": 14,
+        "chapter_title": "National Security",
+        "Section": "National Security Act, 1980",
+        "section_title": "National Security Act, 1980",
+        "section_desc": "This law allows the government to detain a person without trial for a limited period if they are a threat to national security, public order, or essential services."
+    },
+    {
+        "chapter": 15,
+        "chapter_title": "Arms and Ammunition",
+        "Section": "Arms Act, 1959",
+        "section_title": "Arms Act, 1959",
+        "section_desc": "This law regulates the manufacture, sale, possession, and use of arms and ammunition. It provides punishment for illegal possession and trafficking of weapons."
+    },
+    {
+        "chapter": 16,
+        "chapter_title": "Examination Integrity",
+        "Section": "Public Examinations Act, 2024",
+        "section_title": "Public Examinations (Prevention of Unfair Means) Act, 2024",
+        "section_desc": "This new law targets exam paper leaks, cheating, impersonation, and organized exam fraud in public examinations. It aims to ensure fairness and protect the future of students."
+    }
+]

@@ -101,13 +101,32 @@ export function OcrResult({ text, onClear, onTextChange }: OcrResultProps) {
     };
 
     const handleImageDownload = async () => {
-        if (!textareaRef.current) return;
+        if (!text) return;
 
         try {
-            const canvas = await html2canvas(textareaRef.current, {
+            // Create a temporary div to render the text with proper wrapping
+            const tempDiv = document.createElement("div");
+            tempDiv.style.position = "absolute";
+            tempDiv.style.left = "-9999px";
+            tempDiv.style.top = "0";
+            tempDiv.style.width = "800px"; // Fixed width for consistent output
+            tempDiv.style.padding = "40px";
+            tempDiv.style.backgroundColor = "#ffffff";
+            tempDiv.style.color = "#000000";
+            tempDiv.style.fontFamily = "Arial, sans-serif";
+            tempDiv.style.fontSize = "16px";
+            tempDiv.style.lineHeight = "1.5";
+            tempDiv.style.whiteSpace = "pre-wrap"; // Preserve newlines
+            tempDiv.innerText = text; // Secure text insertion
+
+            document.body.appendChild(tempDiv);
+
+            const canvas = await html2canvas(tempDiv, {
                 backgroundColor: "#ffffff",
-                scale: 2,
+                scale: 2, // High quality
             });
+
+            document.body.removeChild(tempDiv);
 
             const url = canvas.toDataURL("image/png");
             const a = document.createElement("a");

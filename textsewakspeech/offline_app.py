@@ -89,4 +89,4 @@ def listen():
 if __name__ == '__main__':
     print("Starting Offline FIR Generator...")
     print("Please open http://127.0.0.1:5056 in your browser")
-    app.run(debug=True, port=5056)
+    app.run(host='0.0.0.0', debug=True, port=5056)

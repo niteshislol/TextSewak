@@ -92,6 +92,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Render Sections
         sectionsContainer.innerHTML = '';
+
+        // Render Special Acts first (if any)
+        if (data.special_acts && data.special_acts.length > 0) {
+            data.special_acts.forEach(act => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.borderLeft = '4px solid #e74c3c'; // Red border for special acts
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4>Chapter ${act.chapter}: ${act.chapter_title}</h4>
+                        <span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">SPECIAL ACT</span>
+                    </div>
+                    <h3>Section ${act.Section}</h3>
+                    <h5>${act.section_title}</h5>
+                    <p>${act.section_desc || act.description || ''}</p>
+                `;
+                sectionsContainer.appendChild(card);
+            });
+        }
+
+        // Render BNS Sections
         if (data.relevant_sections && data.relevant_sections.length > 0) {
             data.relevant_sections.forEach(section => {
                 const card = document.createElement('div');
@@ -104,7 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 sectionsContainer.appendChild(card);
             });
-        } else {
+        }
+
+        // If no sections or special acts matched
+        if ((!data.relevant_sections || data.relevant_sections.length === 0) &&
+            (!data.special_acts || data.special_acts.length === 0)) {
             sectionsContainer.innerHTML = '<p style="color:var(--text-secondary)">No specific sections matched.</p>';
         }
     }

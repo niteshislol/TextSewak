@@ -1,0 +1,92 @@
+[
+  {
+    "test": "Cyber/Hacking",
+    "input": "Someone hacked my email account",
+    "type": "SPECIAL ACT",
+    "matched": "IT Act, 2000"
+  },
+  {
+    "test": "Drugs",
+    "input": "Caught selling heroin and cocaine",
+    "type": "SPECIAL ACT",
+    "matched": "NDPS Act, 1985"
+  },
+  {
+    "test": "Child Abuse",
+    "input": "Child sexual abuse reported",
+    "type": "SPECIAL ACT",
+    "matched": "POCSO Act, 2012"
+  },
+  {
+    "test": "Corruption",
+    "input": "Government official taking bribes",
+    "type": "SPECIAL ACT",
+    "matched": "Prevention of Corruption Act, 1988"
+  },
+  {
+    "test": "Dowry",
+    "input": "Dowry harassment case",
+    "type": "SPECIAL ACT",
+    "matched": "Dowry Prohibition Act, 1961"
+  },
+  {
+    "test": "Wildlife",
+    "input": "Illegal hunting of endangered species",
+    "type": "SPECIAL ACT",
+    "matched": "Wildlife Protection Act, 1972"
+  },
+  {
+    "test": "Terrorism",
+    "input": "Terrorist attack planned",
+    "type": "SPECIAL ACT",
+    "matched": "UAPA, 1967"
+  },
+  {
+    "test": "Murder",
+    "input": "He murdered the victim",
+    "type": "BNS",
+    "matched": "Sections 100, 101, 102"
+  },
+  {
+    "test": "Rape",
+    "input": "Sexual assault and rape case",
+    "type": "SPECIAL ACT",
+    "matched": "None"
+  },
+  {
+    "test": "Kidnapping",
+    "input": "Child was kidnapped",
+    "type": "BNS",
+    "matched": "Sections 87, 88, 89"
+  },
+  {
+    "test": "Theft",
+    "input": "Robbery and burglary at home",
+    "type": "BNS",
+    "matched": "Sections 305, 306, 307"
+  },
+  {
+    "test": "Fraud",
+    "input": "Online scam and fraud",
+    "type": "SPECIAL ACT",
+    "matched": "None"
+  },
+  {
+    "test": "Accident",
+    "input": "Hit and run car accident",
+    "type": "BNS",
+    "matched": "Sections 106"
+  },
+  {
+    "test": "Assault",
+    "input": "Physical assault and beating",
+    "type": "BNS",
+    "matched": "Sections 74, 75, 76"
+  },
+  {
+    "test": "Extortion",
+    "input": "Blackmail and extortion",
+    "type": "SPECIAL ACT",
+    "matched": "None"
+  }
+]

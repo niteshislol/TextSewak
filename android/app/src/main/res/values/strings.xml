@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">TextSewak OCR</string>
-    <string name="title_activity_main">TextSewak OCR</string>
-    <string name="package_name">com.textsewak.ocr</string>
-    <string name="custom_url_scheme">com.textsewak.ocr</string>
-</resources>
