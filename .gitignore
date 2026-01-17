@@ -39,6 +39,7 @@ env/
 .venv/
 textsewakspeech/model/
 textsewakspeech/vosk-model-*/
+BNS Legal Engine/models/
 
 # Firebase
 .firebase/

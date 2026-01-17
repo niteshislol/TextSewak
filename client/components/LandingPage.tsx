@@ -10,6 +10,9 @@ import {
   ArrowRight,
   Sun,
   Moon,
+  Mic,
+  Gavel,
+  Shield,
 } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 // --- Import Particles ---
@@ -117,7 +120,23 @@ export default function LandingPage() {
       <div className="relative z-10">
         {/* Navbar */}
         <nav className="container mx-auto flex items-center justify-between border-b border-border bg-background/50 px-4 py-6 backdrop-blur-sm">
-          <div className="text-2xl font-bold text-primary">Textसेवक</div>
+          <div className="flex items-center gap-2">
+            <img
+              src="/logo-new.png"
+              alt="TextSewak Logo"
+              className="h-10 sm:h-12 w-auto"
+            />
+            <div className="flex flex-col justify-center -mt-3">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F37f62c68d722453c918104e8c9b5c77d%2F3bebbd34f64b43a2a0d1c98721eccce1?format=webp&width=800"
+                alt="TextSewak"
+                className="h-9 sm:h-11 w-auto mb-0 object-contain object-left"
+              />
+              <p className="text-[10px] sm:text-[11px] text-muted-foreground leading-none hidden sm:block -mt-1">
+                Extract text from any file in seconds
+              </p>
+            </div>
+          </div>
           <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
@@ -184,81 +203,162 @@ export default function LandingPage() {
 
         {/* Features Section */}
         <section className="container mx-auto px-4 py-16">
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/20">
-                <Languages size={32} className="text-primary" />
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-500">
+              Power-Packed Capabilities
+            </h2>
+            <p className="text-muted-foreground text-base max-w-xl mx-auto">
+              More than just OCR. TextSewak is your complete document assistant.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {/* Feature 1: Multi-Language */}
+            <div className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-md hover:shadow-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <Languages size={20} />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-foreground">
-                Multi-Language Support
+              <h3 className="mb-2 text-lg font-bold text-foreground">
+                Multi-Language OCR
               </h3>
-              <p className="text-muted-foreground">
-                Extracts text in Hindi, English, and more.
+              <p className="text-sm text-muted-foreground leading-snug">
+                Expertly extracts text from Hindi and English documents with high accuracy, preserving formatting.
               </p>
             </div>
 
-            <div className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/20">
-                <FileText size={32} className="text-primary" />
+            {/* Feature 2: Voice Dictation */}
+            <div className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-md hover:shadow-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <Mic size={20} />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-foreground">
-                Any File Type
+              <h3 className="mb-2 text-lg font-bold text-foreground">
+                Offline Voice Dictation
               </h3>
-              <p className="text-muted-foreground">
-                Supports PDF, DOCX, JPG, and camera photos.
+              <p className="text-sm text-muted-foreground leading-snug">
+                Speak instead of type. Our privacy-first engine converts speech to text locally without internet.
               </p>
             </div>
 
-            <div className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/20">
-                <History size={32} className="text-primary" />
+            {/* Feature 3: Legal Analysis */}
+            <div className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-md hover:shadow-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <Gavel size={20} />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-foreground">
-                Secure Document History
+              <h3 className="mb-2 text-lg font-bold text-foreground">
+                BNS Legal Engine
               </h3>
-              <p className="text-muted-foreground">
-                Access all your past extractions securely.
+              <p className="text-sm text-muted-foreground leading-snug">
+                Analyze incident reports instantly to find relevant Bharatiya Nyaya Sanhita (BNS) 2023 sections.
+              </p>
+            </div>
+
+            {/* Feature 4: Smart FIR */}
+            <div className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-md hover:shadow-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <FileText size={20} />
+              </div>
+              <h3 className="mb-2 text-lg font-bold text-foreground">
+                Smart FIR Generator
+              </h3>
+              <p className="text-sm text-muted-foreground leading-snug">
+                Generate formal police complaints in seconds by simply selecting a category and speaking the details.
+              </p>
+            </div>
+
+            {/* Feature 5: Any File Type */}
+            <div className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-md hover:shadow-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <UploadCloud size={20} />
+              </div>
+              <h3 className="mb-2 text-lg font-bold text-foreground">
+                Universal File Support
+              </h3>
+              <p className="text-sm text-muted-foreground leading-snug">
+                Handles PDF, DOCX, JPG, PNG, and HEIC files effortlessly. Even works with camera snapshots.
+              </p>
+            </div>
+
+            {/* Feature 6: Secure History */}
+            <div className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-md hover:shadow-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <Shield size={20} />
+              </div>
+              <h3 className="mb-2 text-lg font-bold text-foreground">
+                Secure & Private
+              </h3>
+              <p className="text-sm text-muted-foreground leading-snug">
+                Works offline or in local mode. Your sensitive documents stay on your machine, always.
               </p>
             </div>
           </div>
         </section>
 
         {/* How It Works Section */}
-        <section className="container mx-auto px-4 py-16">
-          <h2 className="mb-12 text-center text-3xl font-bold text-foreground md:text-4xl">
-            How It Works
-          </h2>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-yellow-500">
-                <UploadCloud
-                  size={40}
-                  className="text-white dark:text-gray-900"
-                />
+        <section className="container mx-auto px-4 py-12 bg-secondary/20">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
+              How It Works
+            </h2>
+            <p className="text-muted-foreground text-base">
+              Three simple steps to digitize your workflow.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-3">
+            {/* Step 1 */}
+            <div className="relative group text-center">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-card border-2 border-muted group-hover:border-primary transition-colors duration-300 shadow-sm">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <UploadCloud size={24} className="text-primary" />
+                </div>
+                <div className="absolute -top-1 -right-1 bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold border-2 border-background">
+                  1
+                </div>
               </div>
-              <div className="mb-2 text-2xl font-bold text-primary">1. Upload</div>
-              <p className="text-muted-foreground">
-                Drag and drop any file or snap a photo.
+              <h3 className="mb-2 text-lg font-bold text-foreground">Upload or Speak</h3>
+              <p className="text-sm text-muted-foreground px-2">
+                Upload files or use the mic to dictate incidents.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-yellow-500">
-                <Cpu size={40} className="text-white dark:text-gray-900" />
+            {/* Step 2 */}
+            <div className="relative group text-center">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-card border-2 border-muted group-hover:border-primary transition-colors duration-300 shadow-sm">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <Cpu size={24} className="text-primary" />
+                </div>
+                <div className="absolute -top-1 -right-1 bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold border-2 border-background">
+                  2
+                </div>
               </div>
-              <div className="mb-2 text-2xl font-bold text-primary">2. Extract</div>
-              <p className="text-muted-foreground">
-                Our AI analyzes and digitizes the text.
+              <h3 className="mb-2 text-lg font-bold text-foreground">AI Processing</h3>
+              <p className="text-sm text-muted-foreground px-2">
+                Engines analyze text, speech, and legal data instantly.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-yellow-500">
-                <Copy size={40} className="text-white dark:text-gray-900" />
+            {/* Step 3 */}
+            <div className="relative group text-center">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-card border-2 border-muted group-hover:border-primary transition-colors duration-300 shadow-sm">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <Copy size={24} className="text-primary" />
+                </div>
+                <div className="absolute -top-1 -right-1 bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold border-2 border-background">
+                  3
+                </div>
               </div>
-              <div className="mb-2 text-2xl font-bold text-primary">3. Done</div>
-              <p className="text-muted-foreground">
-                Copy, download, or search your new text.
+              <h3 className="mb-2 text-lg font-bold text-foreground">Export & Action</h3>
+              <p className="text-sm text-muted-foreground px-2">
+                Download FIRs, copy text, or search results.
               </p>
             </div>
           </div>

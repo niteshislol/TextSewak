@@ -20,10 +20,17 @@ export async function textToDocx(
 
   const docxParagraphs: Paragraph[] = [
     new Paragraph({
-      text: title,
-      heading: HeadingLevel.HEADING_1,
       alignment: AlignmentType.CENTER,
       spacing: { after: 400 },
+      children: [
+        new TextRun({
+          text: title,
+          bold: true,
+          size: 48, // 24pt
+          color: "000000",
+        }),
+      ],
+      heading: HeadingLevel.HEADING_1,
     }),
     new Paragraph({
       text: "",
@@ -43,18 +50,30 @@ export async function textToDocx(
     ) {
       docxParagraphs.push(
         new Paragraph({
-          text: lines[0],
-          heading: HeadingLevel.HEADING_2,
           spacing: { before: 200, after: 200 },
+          heading: HeadingLevel.HEADING_2,
+          children: [
+            new TextRun({
+              text: lines[0],
+              bold: true,
+              size: 36, // 18pt for headings
+              color: "000000",
+            }),
+          ],
         })
       );
     } else {
       // Regular paragraph - handle line breaks
       const runs: TextRun[] = [];
       lines.forEach((line, index) => {
-        runs.push(new TextRun(line));
+        runs.push(new TextRun({
+          text: line,
+          size: 32, // 16pt requested
+          color: "000000",
+          font: "Arial"
+        }));
         if (index < lines.length - 1) {
-          runs.push(new TextRun({ text: "", break: 1 }));
+          runs.push(new TextRun({ text: "", break: 1, size: 32, color: "000000" }));
         }
       });
 

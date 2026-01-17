@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom"; // For receiving state from OCR page
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Loader2, Gavel, AlertTriangle, BookOpen, Scale } from "lucide-react";
+import { Loader2, Gavel, AlertTriangle, BookOpen, Scale, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -150,6 +150,42 @@ export default function LegalAnalysis() {
                                         {result.custom_message}
                                     </AlertDescription>
                                 </Alert>
+                            )}
+
+                            {result.special_acts && result.special_acts.length > 0 && (
+                                <div className="grid gap-6 md:grid-cols-1">
+                                    <h2 className="text-xl font-bold flex items-center gap-2 text-orange-600 dark:text-orange-500">
+                                        <Shield className="h-5 w-5" />
+                                        Special Acts / विशेष अधिनियम
+                                    </h2>
+
+                                    {result.special_acts.map((act: any, idx: number) => (
+                                        <Card key={idx} className="overflow-hidden border-l-4 border-l-orange-500 hover:shadow-lg transition-shadow bg-card">
+                                            <CardHeader className="bg-orange-50 dark:bg-orange-950/20 pb-3">
+                                                <CardTitle className="text-xl flex justify-between items-start">
+                                                    <span>{act.Section}</span>
+                                                    <span className="text-[10px] font-bold px-2 py-1 bg-orange-500 text-white rounded-full uppercase tracking-wider">
+                                                        SPECIAL ACT
+                                                    </span>
+                                                </CardTitle>
+                                                <CardDescription className="font-medium text-foreground/90 mt-1 text-base">
+                                                    {act.section_title}
+                                                </CardDescription>
+                                            </CardHeader>
+                                            <CardContent className="pt-4 space-y-3">
+                                                <div>
+                                                    <h4 className="text-sm font-semibold text-muted-foreground mb-1">Description</h4>
+                                                    <p className="text-sm leading-relaxed">{act.section_desc || act.description}</p>
+                                                </div>
+                                                <div className="flex gap-2 mt-2">
+                                                    <span className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground border">
+                                                        Chapter {act.chapter}: {act.chapter_title}
+                                                    </span>
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    ))}
+                                </div>
                             )}
 
                             {result.relevant_sections && result.relevant_sections.length > 0 && (

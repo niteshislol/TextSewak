@@ -11,6 +11,7 @@ import { auth, db, isLocalMode } from "@/lib/firebase";
 import { toast } from "sonner";
 import { User } from "@/lib/firebase";
 import { collection, doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
+import { saveOfflineCredentials, verifyOfflineCredentials, clearOfflineCredentials } from "@/utils/offlineAuth";
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -100,6 +101,17 @@ export function AuthProvider({ children }: AuthProviderProps) {
       toast.success("Signed in locally!");
       return;
     }
+
+    // Hardcoded Offline Mode Bypass
+    if (email === "offline@gmail.com" && password === "offline") {
+      setUser({
+        id: "offline-demo-user",
+        email: "offline@gmail.com"
+      });
+      toast.success("Signed in via Offline Bypass");
+      return;
+    }
+
     try {
       setIsLoading(true);
       const userCredential = await signInWithEmailAndPassword(
@@ -123,9 +135,21 @@ export function AuthProvider({ children }: AuthProviderProps) {
         });
       }
 
+      // Save credentials for offline access
+      await saveOfflineCredentials(appUser, password);
+
       setUser(appUser);
       toast.success("Signed in successfully!");
-    } catch (error) {
+    } catch (error: any) {
+      if (error.code === "auth/network-request-failed") {
+        const offlineUser = await verifyOfflineCredentials(email, password);
+        if (offlineUser) {
+          setUser(offlineUser);
+          toast.success("Signed in locally (Offline Mode)");
+          return;
+        }
+      }
+
       const errorMessage = getErrorMessage(error);
       toast.error(errorMessage);
       throw error;
@@ -142,6 +166,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
     try {
       setIsLoading(true);
+      clearOfflineCredentials();
       await firebaseSignOut(auth);
       setUser(null);
       toast.success("Signed out successfully!");

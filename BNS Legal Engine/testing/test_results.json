@@ -1,0 +1,252 @@
+[
+  {
+    "test_name": "Cyber Crime (IT Act)",
+    "input": "Someone hacked my email account and stole my personal data",
+    "language": "en",
+    "special_acts": [
+      {
+        "act_name": "IT Act, 2000",
+        "act_full_name": "Information Technology Act, 2000",
+        "description": "This law deals with cyber crimes like hacking, online fraud, identity theft, spreading obscene content, data theft, and misuse of computers, mobile phones, and the internet.",
+        "confidence": 0.5074554681777954
+      }
+    ],
+    "bns_sections": [
+      {
+        "chapter": 18,
+        "chapter_title": "of offences relating to documents and to property marks",
+        "Section": 339,
+        "section_title": "Having possession of document described in section 337 or section 338, knowing it to be forged and intending to use it as genuine.",
+        "section_desc": "Punishes possession of a forged document knowing it to be forged."
+      },
+      {
+        "chapter": 18,
+        "chapter_title": "of offences relating to documents and to property marks",
+        "Section": 344,
+        "section_title": "Falsification of accounts.",
+        "section_desc": "Punishes a clerk or servant who wilfully falsifies accounts to defraud."
+      },
+      {
+        "chapter": 17,
+        "chapter_title": "of offences against property",
+        "Section": 316,
+        "section_title": "Criminal breach of trust.",
+        "section_desc": "Punishes a person entrusted with property who dishonestly uses or disposes of it."
+      },
+      {
+        "chapter": 18,
+        "chapter_title": "of offences relating to documents and to property marks",
+        "Section": 336,
+        "section_title": "Forgery.",
+        "section_desc": "Defines forgery as making a false document with intent to cause damage or deceit."
+      },
+      {
+        "chapter": 17,
+        "chapter_title": "of offences against property",
+        "Section": 322,
+        "section_title": "Dishonest or fraudulent execution of deed of transfer containing false statement of consideration.",
+        "section_desc": "Punishes executing a transfer deed containing false statements of consideration."
+      }
+    ]
+  },
+  {
+    "test_name": "Drug Crime (NDPS Act)",
+    "input": "Caught selling drugs like heroin and cocaine",
+    "language": "en",
+    "special_acts": [
+      {
+        "act_name": "NDPS Act, 1985",
+        "act_full_name": "Narcotic Drugs and Psychotropic Substances Act, 1985",
+        "description": "This law deals with crimes related to drugs such as ganja, charas, heroin, cocaine, and other intoxicating substances. It covers their production, sale, transport, possession, and consumption.",
+        "confidence": 0.6788237690925598
+      }
+    ],
+    "bns_sections": [
+      {
+        "chapter": 15,
+        "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+        "Section": 277,
+        "section_title": "Sale of adulterated drugs.",
+        "section_desc": "Punishes selling adulterated drugs as genuine."
+      },
+      {
+        "chapter": 15,
+        "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+        "Section": 278,
+        "section_title": "Sale of drug as a different drug or preparation.",
+        "section_desc": "Punishes selling one drug while pretending it is another."
+      },
+      {
+        "chapter": 15,
+        "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+        "Section": 276,
+        "section_title": "Adulteration of drugs.",
+        "section_desc": "Punishes adulterating drugs to lessen efficacy or make them noxious."
+      },
+      {
+        "chapter": 17,
+        "chapter_title": "of offences against property",
+        "Section": 313,
+        "section_title": "Punishment for belonging to gang of robbers, etc.",
+        "section_desc": "Punishes belonging to a gang associated for habitually committing theft or robbery."
+      },
+      {
+        "chapter": 14,
+        "chapter_title": "of false evidence and offences against public justice",
+        "Section": 252,
+        "section_title": "Taking gift to help to recover stolen property, etc.",
+        "section_desc": "Punishes taking money to recover stolen property without helping to apprehend the thief."
+      }
+    ]
+  },
+  {
+    "test_name": "Wildlife Crime",
+    "input": "Illegal hunting of endangered animals",
+    "language": "en",
+    "special_acts": [
+      {
+        "act_name": "Wildlife Protection Act, 1972",
+        "act_full_name": "Wildlife Protection Act, 1972",
+        "description": "This law protects wild animals, birds, plants, forests, and protected areas. It punishes illegal hunting, wildlife trade, and destruction of habitats.",
+        "confidence": 0.7080665826797485
+      }
+    ],
+    "bns_sections": [
+      {
+        "chapter": 15,
+        "chapter_title": "of offences affecting the public health, safety, convenience, decency and morals",
+        "Section": 291,
+        "section_title": "Negligent conduct with respect to animal.",
+        "section_desc": "Punishes negligence in taking care of animals."
+      },
+      {
+        "chapter": 17,
+        "chapter_title": "of offences against property",
+        "Section": 325,
+        "section_title": "Mischief by killing or maiming animal.",
+        "section_desc": "Punishes mischief by killing or maiming any animal."
+      },
+      {
+        "chapter": 5,
+        "chapter_title": "of offences against woman and child",
+        "Section": 78,
+        "section_title": "Stalking.",
+        "section_desc": "Punishes following or contacting a woman despite her disinterest, or monitoring her internet use."
+      },
+      {
+        "chapter": 14,
+        "chapter_title": "of false evidence and offences against public justice",
+        "Section": 265,
+        "section_title": "Resistance or obstruction to lawful apprehension or escape or rescue in cases not otherwise provided for.",
+        "section_desc": "Punishes resistance to apprehension in cases not otherwise provided for."
+      },
+      {
+        "chapter": 5,
+        "chapter_title": "of offences against woman and child",
+        "Section": 96,
+        "section_title": "Procuration of child.",
+        "section_desc": "Punishes inducing a child to go from any place for the purpose of illicit intercourse."
+      }
+    ]
+  },
+  {
+    "test_name": "Child Marriage",
+    "input": "Marriage of a 16 year old girl",
+    "language": "en",
+    "special_acts": [
+      {
+        "act_name": "PCMA, 2006",
+        "act_full_name": "Prohibition of Child Marriage Act, 2006",
+        "description": "This law prohibits child marriage and punishes those who perform, promote, or permit marriage of boys below 21 years and girls below 18 years.",
+        "confidence": 0.5873624682426453
+      }
+    ],
+    "bns_sections": [
+      {
+        "chapter": 5,
+        "chapter_title": "of offences against woman and child",
+        "Section": 82,
+        "section_title": "Marrying again during lifetime of husband or wife.",
+        "section_desc": "Punishes bigamy with imprisonment up to 7 years."
+      },
+      {
+        "chapter": 5,
+        "chapter_title": "of offences against woman and child",
+        "Section": 83,
+        "section_title": "Marriage ceremony fraudulently gone through without lawful marriage.",
+        "section_desc": "Punishes performing a marriage ceremony with fraudulent intent knowing it is not valid."
+      },
+      {
+        "chapter": 5,
+        "chapter_title": "of offences against woman and child",
+        "Section": 81,
+        "section_title": "Cohabitation caused by man deceitfully inducing belief of lawful marriage.",
+        "section_desc": "Punishes a man who deceives a woman into believing they are married to cohabit with her."
+      },
+      {
+        "chapter": 5,
+        "chapter_title": "of offences against woman and child",
+        "Section": 67,
+        "section_title": "Sexual intercourse by husband upon his wife during separation.",
+        "section_desc": "Punishes a husband having non-consensual sex with his wife during legal separation with 2 to 7 years in prison."
+      },
+      {
+        "chapter": 5,
+        "chapter_title": "of offences against woman and child",
+        "Section": 84,
+        "section_title": "Enticing or taking away or detaining with criminal intent a married woman.",
+        "section_desc": "Punishes taking or detaining a married woman with intent for her to have illicit intercourse."
+      }
+    ]
+  },
+  {
+    "test_name": "Corruption",
+    "input": "Government official taking bribes",
+    "language": "en",
+    "special_acts": [
+      {
+        "act_name": "Prevention of Corruption Act, 1988",
+        "act_full_name": "Prevention of Corruption Act, 1988",
+        "description": "This law punishes public servants who take bribes or misuse their official position for personal benefit.",
+        "confidence": 0.500821590423584
+      }
+    ],
+    "bns_sections": [
+      {
+        "chapter": 12,
+        "chapter_title": "of offences by or relating to public servants",
+        "Section": 204,
+        "section_title": "Personating a public servant.",
+        "section_desc": "Punishes pretending to be a public servant and doing any act in that assumed character."
+      },
+      {
+        "chapter": 13,
+        "chapter_title": "of contempts of the lawful authority of public servants",
+        "Section": 221,
+        "section_title": "Obstructing public servant in discharge of public functions.",
+        "section_desc": "Punishes voluntarily obstructing a public servant in the discharge of their public functions."
+      },
+      {
+        "chapter": 10,
+        "chapter_title": "of offences relating to coin, currency-notes, bank-notes, and government stamps",
+        "Section": 183,
+        "section_title": "Effacing writing from substance bearing Government stamp, or removing from document a stamp used for it, with intent to cause loss to Government.",
+        "section_desc": "Punishes removing writing from a stamp or removing a stamp from a document to cause loss to Government."
+      },
+      {
+        "chapter": 9,
+        "chapter_title": "of offences relating to elections",
+        "Section": 170,
+        "section_title": "Bribery.",
+        "section_desc": "Defines bribery as giving gratification to induce a person to exercise an electoral right."
+      },
+      {
+        "chapter": 9,
+        "chapter_title": "of offences relating to elections",
+        "Section": 173,
+        "section_title": "Punishment for bribery.",
+        "section_desc": "Prescribes imprisonment up to one year or fine for bribery."
+      }
+    ]
+  }
+]

@@ -461,18 +461,30 @@ export default function Index() {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
 
-      <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-12">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           className="w-full flex flex-col items-center"
         >
-          {/* Document Upload Section */}
-          <DocumentUploadDropzone
-            onFileChange={handleDocumentFileChange}
-            fileName={documentFileName}
-            disabled={isLoading}
-          />
+          <div className="w-full flex flex-col lg:flex-row gap-8 items-start">
+            <div className="w-full lg:flex-1">
+              <DocumentUploadDropzone
+                onFileChange={handleDocumentFileChange}
+                fileName={documentFileName}
+                disabled={isLoading}
+              />
+            </div>
+
+            <div className="w-full lg:flex-1">
+              <UploadDropzone
+                onFileChange={handleImageFileChange}
+                filePreview={filePreview}
+                fileName={imageFileName}
+                disabled={isLoading}
+              />
+            </div>
+          </div>
 
           {/* PDF Preview */}
           {showPdfPreview && documentFile && documentFile.type === "application/pdf" && (
@@ -485,17 +497,6 @@ export default function Index() {
               />
             </div>
           )}
-
-          {/* Separator */}
-          <div className="w-full h-px bg-border my-8" />
-
-          {/* Image Upload Section */}
-          <UploadDropzone
-            onFileChange={handleImageFileChange}
-            filePreview={filePreview}
-            fileName={imageFileName}
-            disabled={isLoading}
-          />
 
           {/* Image URL Input */}
           <div className="w-full mt-4">
@@ -636,6 +637,6 @@ export default function Index() {
       </div>
 
       <Footer />
-    </div>
+    </div >
   );
 }

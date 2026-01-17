@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import { X, Download, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
-import { textToDocx, docxToHtml } from "@/utils/textToDocx";
-import { convertDocxToSearchablePdf, textToHtml } from "@/utils/docxToPdf";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 interface PdfExportModalProps {
   isOpen: boolean;
@@ -12,52 +12,83 @@ interface PdfExportModalProps {
 }
 
 export function PdfExportModal({ isOpen, onClose, text }: PdfExportModalProps) {
-  const previewRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
 
-  const handleConvert = async () => {
+  const handleConvert = () => {
     if (!text || text.trim().length === 0) {
       toast.error("No text to convert");
       return;
     }
 
     setIsLoading(true);
-    setStatus("Converting text to DOCX...");
+    setStatus("Preparing searchable PDF...");
 
-    try {
-      // Step 1: Convert text to DOCX
-      const docxBlob = await textToDocx(text, "Extracted Text");
-      setStatus("Converting DOCX to HTML...");
+    // Create a hidden iframe
+    const iframe = document.createElement("iframe");
+    iframe.style.position = "fixed";
+    iframe.style.right = "0";
+    iframe.style.bottom = "0";
+    iframe.style.width = "0";
+    iframe.style.height = "0";
+    iframe.style.border = "none";
+    document.body.appendChild(iframe);
 
-      // Step 2: Convert DOCX to HTML using mammoth.js
-      const htmlContent = await docxToHtml(docxBlob);
-      setStatus("Opening print dialog for searchable PDF...");
-
-      // Step 3: Convert HTML to searchable PDF using browser print
-      await convertDocxToSearchablePdf(htmlContent, `extracted-text-${Date.now()}.pdf`);
-
-      toast.success(
-        "Print dialog opened! Select 'Save as PDF' to download searchable PDF.",
-        { duration: 5000 }
-      );
-
-      // Close modal after a delay
-      setTimeout(() => {
-        onClose();
-        setStatus(null);
-      }, 2000);
-    } catch (error) {
-      console.error("Failed to generate PDF:", error);
-      setStatus(null);
-      toast.error(
-        error instanceof Error
-          ? error.message
-          : "Failed to generate PDF. Please try again."
-      );
-    } finally {
+    const doc = iframe.contentWindow?.document;
+    if (!doc) {
       setIsLoading(false);
+      return;
     }
+
+    // Write content
+    doc.open();
+    doc.write(`
+        <html>
+        <head>
+            <title>Extracted_Text_${Date.now()}</title>
+            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+            <style>
+                body {
+                    font-family: 'Noto Sans Devanagari', sans-serif;
+                    padding: 40px;
+                    color: #000;
+                    background: #fff;
+                }
+                pre {
+                    white-space: pre-wrap;
+                    font-family: 'Noto Sans Devanagari', sans-serif;
+                    font-size: 14pt;
+                    line-height: 1.6;
+                }
+                h1 { text-align: center; font-size: 18pt; margin-bottom: 20px; }
+            </style>
+        </head>
+        <body>
+            <h1>Extracted Text</h1>
+            <pre>${text}</pre>
+            <script>
+                window.onload = function() {
+                    // Slight delay to ensure fonts load
+                    setTimeout(function() {
+                        window.print();
+                        window.parent.postMessage('print-closed', '*');
+                    }, 500);
+                }
+            </script>
+        </body>
+        </html>
+    `);
+    doc.close();
+
+    // Listen for completion (approximate)
+    toast.info("Please select 'Save as PDF' in the print dialog.");
+
+    setTimeout(() => {
+      document.body.removeChild(iframe);
+      setIsLoading(false);
+      setStatus(null);
+      onClose();
+    }, 2000); // Wait long enough for dialog to trigger
   };
 
   if (!isOpen) return null;
@@ -67,110 +98,42 @@ export function PdfExportModal({ isOpen, onClose, text }: PdfExportModalProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto"
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
       <motion.div
         initial={{ scale: 0.95 }}
         animate={{ scale: 1 }}
-        className="bg-card rounded-lg overflow-hidden w-full max-w-3xl my-8"
+        className="bg-card rounded-lg overflow-hidden w-full max-w-md"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-border bg-secondary/30">
-          <h2 className="text-lg font-semibold text-foreground">
-            Export as PDF
-          </h2>
-          <button
-            onClick={onClose}
-            disabled={isLoading}
-            className="p-1 rounded-lg hover:bg-secondary transition-colors disabled:opacity-50"
-          >
-            <X size={20} />
-          </button>
+        <div className="flex items-center justify-between p-4 border-b border-border">
+          <h2 className="text-lg font-semibold">Export PDF</h2>
+          <button onClick={onClose}><X size={20} /></button>
         </div>
 
-        {/* Content */}
-        <div className="p-6 max-h-96 overflow-y-auto bg-gray-50 dark:bg-gray-900">
-          <div className="flex flex-col items-center">
-            <div
-              ref={previewRef}
-              id="preview-content"
-              style={{
-                width: "210mm",
-                minHeight: "297mm",
-                padding: "15mm",
-                background: "white",
-                margin: "auto",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-              }}
-              className="text-black rounded-sm"
-            >
-              {/* A4 Page Content - Preview of what will be in PDF */}
-              <div className="prose prose-sm max-w-none">
-                <h1 style={{ fontSize: "24px", marginBottom: "12px" }}>
-                  Extracted Document
-                </h1>
-                <div
-                  style={{
-                    fontSize: "11pt",
-                    lineHeight: "1.6",
-                    whiteSpace: "pre-wrap",
-                    wordWrap: "break-word",
-                  }}
-                  dangerouslySetInnerHTML={{ __html: textToHtml(text) }}
-                />
-              </div>
+        <div className="p-6 space-y-4">
+          <div className="flex items-center gap-4 p-4 bg-muted rounded-lg">
+            <FileText className="w-8 h-8 text-primary" />
+            <div>
+              <h3 className="font-medium">Download as PDF</h3>
+              <p className="text-sm text-muted-foreground">Save the extracted text as a clean PDF document.</p>
             </div>
           </div>
+
+          {status && (
+            <div className="text-sm text-center text-blue-500 animate-pulse">{status}</div>
+          )}
         </div>
 
-        {/* Info Bar */}
-        <div className="px-6 py-3 border-t border-border bg-secondary/20">
-          <div className="flex items-start gap-2">
-            <FileText size={16} className="text-primary mt-0.5 flex-shrink-0" />
-            <div className="text-xs text-muted-foreground">
-              <p className="font-semibold text-foreground mb-1">
-                Searchable PDF Export
-              </p>
-              <p>
-                This will create a <strong>searchable PDF</strong> (not an image).
-                The print dialog will open - select <strong>"Save as PDF"</strong> or{" "}
-                <strong>"Print to PDF"</strong> as the destination.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Status Message */}
-        {status && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="px-6 py-3 bg-blue-50 dark:bg-blue-950 border-t border-blue-200 dark:border-blue-800"
-          >
-            <p className="text-sm text-blue-900 dark:text-blue-100 text-center">
-              {status}
-            </p>
-          </motion.div>
-        )}
-
-        {/* Footer */}
-        <div className="p-4 bg-secondary/30 flex gap-3 justify-end border-t border-border">
-          <button
-            onClick={onClose}
-            disabled={isLoading}
-            className="px-6 py-2 rounded-lg border border-border hover:bg-secondary transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Cancel
-          </button>
+        <div className="p-4 bg-secondary/30 flex justify-end gap-2">
+          <button onClick={onClose} className="px-4 py-2 rounded-md hover:bg-secondary transition-colors">Cancel</button>
           <button
             onClick={handleConvert}
             disabled={isLoading}
-            className="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+            className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2"
           >
-            <Download size={18} />
-            {isLoading ? "Converting..." : "Convert & Download PDF"}
+            {isLoading ? "Generating..." : <><Download size={16} /> Download PDF</>}
           </button>
         </div>
       </motion.div>
