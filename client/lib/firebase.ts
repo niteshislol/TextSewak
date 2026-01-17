@@ -17,18 +17,27 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-if (
-  !firebaseConfig.apiKey ||
-  !firebaseConfig.authDomain ||
-  !firebaseConfig.projectId
-) {
-  throw new Error(
-    "Missing Firebase configuration. Make sure all VITE_FIREBASE_* environment variables are set.",
-  );
+// Check if critical keys are present
+export const isLocalMode = !firebaseConfig.apiKey || !firebaseConfig.authDomain || !firebaseConfig.projectId;
+
+let app: any = null;
+let auth: any = null;
+let db: any = null;
+let storage: any = null;
+
+if (!isLocalMode) {
+  try {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+    storage = getStorage(app);
+  } catch (error) {
+    console.error("Firebase initialization failed:", error);
+    // Fallback to local mode if init fails
+    // isLocalMode = true; // Cannot reassign const, but services will be null
+  }
+} else {
+  console.warn("Running in LOCAL MODE (No Firebase keys found). Cloud features disabled.");
 }
 
-const app = initializeApp(firebaseConfig);
-
-export const auth = getAuth(app);
-export const db = getFirestore(app);
-export const storage = getStorage(app);
+export { auth, db, storage };

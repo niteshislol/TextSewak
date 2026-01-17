@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { isLocalMode } from "@/lib/firebase";
 import { createWorker, Worker, PSM } from "tesseract.js";
 import { toast } from "sonner";
 import { Loader2, Zap, X, Trash2, Gavel } from "lucide-react";
@@ -397,7 +398,9 @@ export default function Index() {
         setResult(extractedText);
         toast.success("PDF processed successfully!");
 
-        await saveToHistory(currentFile, extractedText, language);
+        if (!isLocalMode) {
+          await saveToHistory(currentFile, extractedText, language);
+        }
       }
       // Handle Word documents (server-side)
       else if (uploadType === "document" && currentFile?.type.includes("word")) {
@@ -424,7 +427,9 @@ export default function Index() {
         setResult(data.text);
         toast.success("Document processed successfully!");
 
-        await saveToHistory(currentFile, extractedText, language);
+        if (!isLocalMode) {
+          await saveToHistory(currentFile, extractedText, language);
+        }
       } else {
         throw new Error("Unsupported file type.");
       }

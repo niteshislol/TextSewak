@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
   User as FirebaseUser,
 } from "firebase/auth";
-import { auth, db } from "@/lib/firebase";
+import { auth, db, isLocalMode } from "@/lib/firebase";
 import { toast } from "sonner";
 import { User } from "@/lib/firebase";
 import { collection, doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
@@ -21,6 +21,16 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (isLocalMode) {
+      // LOCAL MODE: Auto-login as Local User
+      setUser({
+        id: "local-user",
+        email: "local@textsewak.app"
+      });
+      setIsLoading(false);
+      return;
+    }
+
     // Set a timeout to prevent indefinite loading if Firebase is unreachable
     const timeout = setTimeout(() => {
       setIsLoading(false);
@@ -47,6 +57,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, []);
 
   async function handleSignUp(email: string, password: string) {
+    if (isLocalMode) {
+      toast.success("Account created locally!");
+      return;
+    }
     try {
       setIsLoading(true);
       const userCredential = await createUserWithEmailAndPassword(
@@ -78,6 +92,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   async function handleSignIn(email: string, password: string) {
+    if (isLocalMode) {
+      setUser({
+        id: "local-user",
+        email: "local@textsewak.app"
+      });
+      toast.success("Signed in locally!");
+      return;
+    }
     try {
       setIsLoading(true);
       const userCredential = await signInWithEmailAndPassword(
@@ -113,6 +135,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   async function handleSignOut() {
+    if (isLocalMode) {
+      // Ideally we don't sign out in local mode or we just stay logged in
+      toast.info("Local mode relies on auto-login.");
+      return;
+    }
     try {
       setIsLoading(true);
       await firebaseSignOut(auth);
