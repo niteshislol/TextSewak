@@ -1,6 +1,6 @@
 # TextSewak-OCR 🇮🇳
 
-**TextSewak** is an advanced Offline OCR and Legal Assistance platform designed specifically for Indian law enforcement and legal professionals. It combines powerful client-side processing with specialized offline capabilities to ensure data privacy, speed, and reliability without persistent internet dependence.
+**TextSewak** is an advanced Gemini Powered OCR and Legal Assistance platform designed specifically for Indian law enforcement and legal professionals. It combines powerful client-side processing with specialized offline capabilities to ensure data privacy, speed, and reliability without persistent internet dependence.
 
 ![TextSewak Architecture](Document/textsewak_architecture_diagram.png)
 *(Generate a visual using the prompt in `Document/SYSTEM_PIPELINE.md`)*
@@ -14,7 +14,7 @@ We have added a simple batch script to start all servers (Legal Engine, Speech, 
 ## 🚀 Key Features
 
 ### 1. 📝 Intelligent OCR (Optical Character Recognition)
-*   **Offline Processing**: Runs entirely in the browser using WebAssembly (Tesseract.js).
+*   **Gemini Processing**: Runs entirely in the browser using WebAssembly (Gemini and Tesseract.js).
 *   **Multi-Format Support**: Extracts text from Images (JPG, PNG) and PDF documents.
 *   **Hindi & English**: Optimized for Devanagari script and English text.
 *   **History**: Auto-saves processed documents to Firebase for easy retrieval.
@@ -28,7 +28,7 @@ We have added a simple batch script to start all servers (Legal Engine, Speech, 
 *   **Context-Aware Justice**: Analyzes FIR descriptions to suggest accurate **Bharatiya Nyaya Sanhita (BNS)** sections.
 *   **Granular Matching**: Implementation of sentence-level similarity search to find the exact legal provision.
 *   **Top-K Results**: Returns the top 3 most relevant sections with confidence scores.
-*   **Fully Offline**: Uses local `sentence-transformers`—no data leaves your machine.
+*   **Fully**: Uses local `sentence-transformers`—no data leaves your machine.
 *   **Voice-to-FIR**: Generate formal FIR complaints just by speaking details in Hindi.
 *   **Export**: Download complaints as formatted Microsoft Word (`.docx`) or Text (`.txt`) files.
 
@@ -53,7 +53,7 @@ Use these credentials to log in without internet:
 
 *   **Frontend**: React 18, Vite, Tailwind CSS, Shadcn UI
 *   **Backend (Speech)**: Python Flask, VOSK (Offline ASR), PyAudio
-*   **Database**: Firebase Firestore & Authentication
+*   **Database**: Firebase Firestore  & Authentication
 *   **OCR Engine**: Tesseract.js (Client-Side Worker)
 *   **PDF Engine**: PDF.js
 
